@@ -1,5 +1,3 @@
-// @flow
-
 import * as d3 from 'd3'
 import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale, categoryIds } from '../constants'
 import React from 'react'

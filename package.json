@@ -13,9 +13,9 @@
   "scripts": {
     "dev": "next",
     "export": "next build && next export",
-    "flow": "flow"
+    "tsc": "tsc"
   },
   "devDependencies": {
-    "flow-bin": "^0.57.2"
+    "typescript": "^3.3.3333"
   }
 }

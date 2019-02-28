@@ -1,4 +1,3 @@
-// @flow
 import * as d3 from 'd3'
 
 export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |

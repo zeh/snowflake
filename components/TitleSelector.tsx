@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react'
 import { eligibleTitles } from '../constants'
 import type { MilestoneMap } from '../constants'
