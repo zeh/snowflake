@@ -1188,7 +1188,7 @@ export const totalPointsFromMilestoneMap = (milestoneMap: MilestoneMap): number 
     .reduce((sum, addend) => (sum + addend), 0)
 
 export const categoryColorScale = d3.scaleOrdinal()
-  .domain(categoryIds)
+  .domain(Array.from(categoryIds))
   .range(['#00abc2', '#428af6', '#e1439f', '#e54552'])
 
 export const titles = [
