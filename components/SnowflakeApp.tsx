@@ -17,7 +17,7 @@ type SnowflakeAppState = {
   focusedTrackId: TrackId,
 }
 
-const hashToState = (hash: String): ?SnowflakeAppState => {
+const hashToState = (hash: String): SnowflakeAppState | null => {
   if (!hash) return null
   const result = defaultState()
   const hashValues = hash.split('#')[1].split(',')
