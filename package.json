@@ -6,9 +6,9 @@
   "license": "MIT",
   "dependencies": {
     "d3": "^4.11.0",
-    "next": "^4.0.0-beta.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "scripts": {
     "dev": "next",
@@ -16,6 +16,8 @@
     "tsc": "tsc"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@zeit/next-typescript": "^1.1.1",
     "typescript": "^3.3.3333"
   }
 }
