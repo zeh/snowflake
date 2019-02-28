@@ -24,7 +24,7 @@ class NightingaleChart extends React.Component<Props> {
       .domain([0, 5])
 
     this.radiusScale = d3.scaleBand()
-      .domain(arcMilestones)
+      .domain(arcMilestones.map(m => m.toString(10)))
       .range([.15 * width, .45 * width])
       .paddingInner(0.1)
 

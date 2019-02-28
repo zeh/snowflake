@@ -24,7 +24,7 @@ export interface MilestoneMap {
   'RECRUITING': Milestone,
   'COMMUNITY': Milestone
 }
-export const milestones = [0, 1, 2, 3, 4, 5]
+export const milestones: Milestone[] = [0, 1, 2, 3, 4, 5]
 
 export const milestoneToPoints = (milestone: Milestone): number => {
   switch (milestone) {
