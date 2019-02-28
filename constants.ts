@@ -1162,7 +1162,8 @@ export const tracks: Tracks = {
   },
 }
 
-export const trackIds: TrackId[] = Object.keys(tracks)
+// Typescript doesn't do sealed types
+export const trackIds = Object.keys(tracks) as TrackId[];
 
 export const categoryIds: Set<string> = trackIds.reduce((set, trackId) => {
   set.add(tracks[trackId].category)
