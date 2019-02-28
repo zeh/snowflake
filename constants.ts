@@ -38,7 +38,7 @@ export const milestoneToPoints = (milestone: Milestone): number => {
   }
 }
 
-export const pointsToLevels = {
+export const pointsToLevels: { [ key: string ]: string } = {
   '0': '1.1',
   '5': '1.2',
   '11': '1.3',

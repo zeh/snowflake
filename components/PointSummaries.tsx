@@ -18,7 +18,7 @@ class PointSummaries extends React.Component<Props> {
       pointsForCurrentLevel--
     }
 
-    let pointsToNextLevel = 1
+    let pointsToNextLevel: string | number = 1
     while (!(nextLevel = pointsToLevels[totalPoints + pointsToNextLevel])) {
       pointsToNextLevel++
       if (pointsToNextLevel > 135) {
