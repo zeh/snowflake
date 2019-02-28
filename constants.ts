@@ -1179,7 +1179,6 @@ export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
     pointsByCategory.set(categoryId, currentPoints + milestoneToPoints(milestone))
   })
   return Array.from(categoryIds.values()).map(categoryId => {
-    const points = pointsByCategory.get(categoryId)
     return { categoryId, points: pointsByCategory.get(categoryId) || 0 }
   })
 }
