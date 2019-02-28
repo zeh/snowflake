@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale, categoryIds } from '../constants'
+import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale } from '../constants'
 import * as React from 'react'
 import { MilestoneMap } from '../constants'
 

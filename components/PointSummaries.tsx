@@ -1,4 +1,4 @@
-import { pointsToLevels, milestoneToPoints, trackIds, totalPointsFromMilestoneMap } from '../constants'
+import { pointsToLevels, totalPointsFromMilestoneMap } from '../constants'
 import { MilestoneMap } from '../constants'
 import * as React from 'react'
 
@@ -10,7 +10,8 @@ class PointSummaries extends React.Component<Props> {
   render() {
     const totalPoints = totalPointsFromMilestoneMap(this.props.milestoneByTrack)
 
-    let currentLevel, nextLevel
+	let currentLevel
+	let nextLevel
 
     let pointsForCurrentLevel = totalPoints
     while (!(currentLevel = pointsToLevels[pointsForCurrentLevel])) {
