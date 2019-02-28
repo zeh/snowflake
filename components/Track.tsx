@@ -5,7 +5,7 @@ import { MilestoneMap, TrackId, Milestone } from '../constants'
 interface Props {
   milestoneByTrack: MilestoneMap,
   trackId: TrackId,
-  handleTrackMilestoneChangeFn: (TrackId, Milestone) => void
+  handleTrackMilestoneChangeFn: (arg0: TrackId, arg1: Milestone) => void
 }
 
 class Track extends React.Component<Props> {

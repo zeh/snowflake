@@ -5,7 +5,7 @@ import { MilestoneMap, TrackId } from '../constants'
 interface Props {
   milestoneByTrack: MilestoneMap,
   focusedTrackId: TrackId,
-  setFocusedTrackIdFn: (TrackId) => void
+  setFocusedTrackIdFn: (arg0: TrackId) => void
 }
 
 class TrackSelector extends React.Component<Props> {

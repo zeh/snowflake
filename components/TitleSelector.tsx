@@ -5,7 +5,7 @@ import { MilestoneMap } from '../constants'
 interface Props {
   milestoneByTrack: MilestoneMap,
   currentTitle: String,
-  setTitleFn: (string) => void
+  setTitleFn: (arg0: string) => void
 }
 
 class TitleSelector extends React.Component {

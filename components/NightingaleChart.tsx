@@ -9,7 +9,7 @@ const arcMilestones = milestones.slice(1) // we'll draw the '0' milestone with a
 interface Props {
   milestoneByTrack: MilestoneMap,
   focusedTrackId: TrackId,
-  handleTrackMilestoneChangeFn: (TrackId, Milestone) => void
+  handleTrackMilestoneChangeFn: (arg0: TrackId, arg1: Milestone) => void
 }
 
 class NightingaleChart extends React.Component<Props> {
