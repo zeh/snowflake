@@ -1,5 +1,5 @@
 import { tracks, milestones, categoryColorScale } from '../constants'
-import React from 'react'
+import * as React from 'react'
 import { MilestoneMap, TrackId, Milestone } from '../constants'
 
 interface Props {

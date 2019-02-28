@@ -1,6 +1,6 @@
 import { pointsToLevels, milestoneToPoints, trackIds, totalPointsFromMilestoneMap } from '../constants'
 import { MilestoneMap } from '../constants'
-import React from 'react'
+import * as React from 'react'
 
 interface Props {
   milestoneByTrack: MilestoneMap

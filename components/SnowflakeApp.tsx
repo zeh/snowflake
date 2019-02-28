@@ -7,7 +7,7 @@ import LevelThermometer from '../components/LevelThermometer'
 import { eligibleTitles, trackIds, milestones, milestoneToPoints } from '../constants'
 import PointSummaries from '../components/PointSummaries'
 import { Milestone, MilestoneMap, TrackId } from '../constants'
-import React from 'react'
+import * as React from 'react'
 import TitleSelector from '../components/TitleSelector'
 
 type SnowflakeAppState = {

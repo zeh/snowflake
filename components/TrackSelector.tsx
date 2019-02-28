@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { trackIds, tracks, categoryColorScale } from '../constants'
 import { MilestoneMap, TrackId } from '../constants'
 

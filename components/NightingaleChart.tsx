@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import * as d3 from 'd3'
 import { trackIds, milestones, tracks, categoryColorScale } from '../constants'
 import { TrackId, Milestone, MilestoneMap } from '../constants'
