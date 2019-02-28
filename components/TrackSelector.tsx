@@ -1,8 +1,8 @@
 import React from 'react'
 import { trackIds, tracks, categoryColorScale } from '../constants'
-import type { MilestoneMap, TrackId } from '../constants'
+import { MilestoneMap, TrackId } from '../constants'
 
-type Props = {
+interface Props {
   milestoneByTrack: MilestoneMap,
   focusedTrackId: TrackId,
   setFocusedTrackIdFn: (TrackId) => void

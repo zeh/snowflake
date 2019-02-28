@@ -6,7 +6,7 @@ import Wordmark from '../components/Wordmark'
 import LevelThermometer from '../components/LevelThermometer'
 import { eligibleTitles, trackIds, milestones, milestoneToPoints } from '../constants'
 import PointSummaries from '../components/PointSummaries'
-import type { Milestone, MilestoneMap, TrackId } from '../constants'
+import { Milestone, MilestoneMap, TrackId } from '../constants'
 import React from 'react'
 import TitleSelector from '../components/TitleSelector'
 
@@ -101,7 +101,7 @@ const stateToHash = (state: SnowflakeAppState) => {
   return values.join(',')
 }
 
-type Props = {}
+interface Props {}
 
 class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
   constructor(props: Props) {

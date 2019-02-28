@@ -6,7 +6,7 @@ export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
   'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
-export type MilestoneMap = {
+export interface MilestoneMap {
   'MOBILE': Milestone,
   'WEB_CLIENT': Milestone,
   'FOUNDATIONS': Milestone,
@@ -58,7 +58,7 @@ export const pointsToLevels = {
 
 export const maxLevel = 135
 
-export type Track = {
+export interface Track {
   displayName: string,
   category: string, // TK categoryId type?
   description: string,
@@ -69,7 +69,7 @@ export type Track = {
   }[]
 }
 
-type Tracks = {|
+type Tracks = {
   'MOBILE': Track,
   'WEB_CLIENT': Track,
   'FOUNDATIONS': Track,
@@ -86,7 +86,7 @@ type Tracks = {|
   'EVANGELISM': Track,
   'RECRUITING': Track,
   'COMMUNITY': Track
-|}
+}
 
 export const tracks: Tracks = {
   "MOBILE": {

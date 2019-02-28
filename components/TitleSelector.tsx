@@ -1,8 +1,8 @@
 import React from 'react'
 import { eligibleTitles } from '../constants'
-import type { MilestoneMap } from '../constants'
+import { MilestoneMap } from '../constants'
 
-type Props = {
+interface Props {
   milestoneByTrack: MilestoneMap,
   currentTitle: String,
   setTitleFn: (string) => void

@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale, categoryIds } from '../constants'
 import React from 'react'
-import type { MilestoneMap } from '../constants'
+import { MilestoneMap } from '../constants'
 
 const margins = {
   top: 30,
@@ -12,7 +12,7 @@ const margins = {
 const height = 150
 const width = 550
 
-type Props = {
+interface Props {
   milestoneByTrack: MilestoneMap,
 }
 
@@ -20,10 +20,10 @@ class LevelThermometer extends React.Component<Props> {
   pointScale: any
   topAxisFn: any
   bottomAxisFn: any
-  topAxis: *
-  bottomAxis: *
+  topAxis: unknown
+  bottomAxis: unknown
 
-  constructor(props: *) {
+  constructor(props: Props) {
     super(props)
 
     this.pointScale = d3.scaleLinear()
