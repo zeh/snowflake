@@ -1,15 +1,13 @@
 # Snowflake
 
-Snowflake is Medium's tool for planning and supporting our engineers' career development. You can read more
-about how we use this tool in our [growth framework documentation](https://medium.com/s/engineering-growth-framework).
-Our growth tool is hosted [publicly](https://snowflake.medium.com).
+This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake), but in TypeScript (instead of the original Flow).
 
-![The Lannisters send their regards](https://i.imgur.com/e9DYLBr.png)
+Read more about their tool in their [growth framework documentation](https://medium.com/s/engineering-growth-framework).
+It is also hosted [publicly](https://snowflake.medium.com).
 
 ## Contributions
 
-You are free to use, change and build on this work to make it useful for your organisation. We will happily consider
-unencumbered code contributions to improve functionality, but as this is the actual tool we use within Medium, acceptance is likely to be intentional, and deliberate. Meaning, slow. As such, you may prefer to fork the codebase for your own needs. We will not accept any contributions that modify the text of the application (but, thank you in advance for pointing out any typos).
+This is meant to duplicate the original tool's functionality. Little fixes might be added but this fork is unlikely to detract from the original tool. Fixes by third-party forks might be merged too.
 
 ## Installation
 
