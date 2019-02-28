@@ -4,7 +4,7 @@ import { MilestoneMap } from '../constants'
 
 interface Props {
   milestoneByTrack: MilestoneMap,
-  currentTitle: String,
+  currentTitle: string,
   setTitleFn: (arg0: string) => void
 }
 
