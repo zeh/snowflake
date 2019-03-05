@@ -1,0 +1,234 @@
+{
+	"mappings": {
+		"milestonesToPoints": [ 1, 3, 6, 12, 20 ],
+		"pointsToLevels": {
+			"0": "1.1",
+			"5": "1.2",
+			"11": "1.3",
+			"17": "2.1",
+			"23": "2.2",
+			"29": "2.3",
+			"36": "3.1",
+			"43": "3.2",
+			"50": "3.3",
+			"58": "4.1",
+			"66": "4.2",
+			"74": "4.3",
+			"90": "5.1",
+			"110": "5.2",
+			"135": "5.3"
+		},
+		"pointsToTitles": [
+			{ "name": "Engineer I", "min": 0, "max": 16 },
+			{ "name": "Engineer II", "min": 17, "max": 35 },
+			{ "name": "Senior Engineer", "min": 36, "max": 57 },
+			{ "name": "Group Lead", "min": 36, "max": 57 },
+			{ "name": "Staff Engineer", "min": 58, "max": 89 },
+			{ "name": "Senior Group Lead", "min": 58, "max": 89 },
+			{ "name": "Principal Engineer", "min": 90 },
+			{ "name": "Director of Engineering", "min": 90 }
+		]
+	},
+	"categories": {
+		"a": {
+			"name": "A",
+			"color": "#00abc2",
+			"tracks": {
+				"mobile": {
+					"name": "Mobile",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"web-client": {
+					"name": "Web Client",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"foundations": {
+					"name": "Foundations",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"servers": {
+					"name": "Servers",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"b": {
+			"name": "B",
+			"color": "#428af6",
+			"tracks": {
+				"project-management": {
+					"name": "Project Management",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"communication": {
+					"name": "Communication",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"craft": {
+					"name": "Craft",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"initiative": {
+					"name": "Initiative",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"c": {
+			"name": "C",
+			"color": "#e1439f",
+			"tracks": {
+				"career-development": {
+					"name": "Career Development",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"org-design": {
+					"name": "Org Desigb",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"wellbeing": {
+					"name": "Well Being",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"accomplishment": {
+					"name": "Accomplishment",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"d": {
+			"name": "D",
+			"color": "#e54552",
+			"tracks": {
+				"mentorship": {
+					"name": "Mentorship",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"evangelism": {
+					"name": "Evangelism",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"recruiting": {
+					"name": "Recruiting",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"community": {
+					"name": "Community",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		}
+	}
+}
