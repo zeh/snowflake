@@ -1,9 +1,35 @@
 import * as React from "react";
 import * as d3 from "d3";
+import cx from "@emotion/css";
+
 import Score from "../ladder/models/Score";
 import Ladder from "../ladder/models/Ladder";
 
 const width = 400;
+
+const styles = {
+	figure: {
+		margin: 0,
+	},
+	svg: {
+		width: width,
+		height: width,
+	},
+	trackMilestone: {
+		fill: "#eee",
+		cursor: "pointer",
+		":hover": {
+			stroke: "#000",
+			strokeWidth: 4,
+			strokeLinejoin: "round" as "round",
+		},
+	},
+	trackMilestoneCurrent: {
+		stroke: "#000",
+		strokeWidth: 4,
+		strokeLinejoin: "round" as "round",
+	},
+};
 
 interface IProps {
 	ladder: Ladder;
@@ -47,27 +73,8 @@ class NightingaleChart extends React.Component<IProps> {
 		const allTracks = this.props.ladder.getAllTracks();
 		const arcMilestones = this.props.ladder.getMilestoneIds();
 		return (
-			<figure>
-				<style jsx>{`
-					figure {
-						margin: 0;
-					}
-					svg {
-						width: ${width}px;
-						height: ${width}px;
-					}
-					.track-milestone {
-						fill: #eee;
-						cursor: pointer;
-					}
-					.track-milestone-current,
-					.track-milestone:hover {
-						stroke: #000;
-						stroke-width: 4px;
-						stroke-linejoin: round;
-					}
-				`}</style>
-				<svg>
+			<figure css={styles.figure}>
+				<svg css={styles.svg}>
 					<g transform={`translate(${width / 2},${width / 2}) rotate(-33.75)`}>
 						{allTracks.map((track, i) => {
 							const isCurrentTrack = track.id == this.props.focusedTrackId;
@@ -80,11 +87,11 @@ class NightingaleChart extends React.Component<IProps> {
 										return (
 											<path
 												key={milestoneId}
-												className={
-													"track-milestone " +
-													(isMet ? "is-met " : " ") +
-													(isCurrentMilestone ? "track-milestone-current" : "")
-												}
+												css={cx(
+													styles.trackMilestone,
+													isMet ? "is-met " : " ",
+													isCurrentMilestone ? styles.trackMilestoneCurrent : "",
+												)}
 												onClick={() => this.props.handleTrackMilestoneChangeFn(track.id, milestoneId)}
 												d={this.arcFn(milestoneId)}
 												style={{ fill: isMet ? color : undefined }}
@@ -96,9 +103,10 @@ class NightingaleChart extends React.Component<IProps> {
 										cx={"0"}
 										cy={"-50"}
 										style={{ fill: color }}
-										className={
-											"track-milestone " + (isCurrentTrack && !currentMilestoneId ? "track-milestone-current" : "")
-										}
+										css={cx(
+											styles.trackMilestone,
+											isCurrentTrack && !currentMilestoneId ? styles.trackMilestoneCurrent : "",
+										)}
 										onClick={() => this.props.handleTrackMilestoneChangeFn(track.id, 0)}
 									/>
 								</g>

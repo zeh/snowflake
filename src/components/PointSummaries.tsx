@@ -2,6 +2,29 @@ import * as React from "react";
 
 import Score from "../ladder/models/Score";
 
+const styles = {
+	table: {
+		borderSpacing: 3,
+		marginBottom: 20,
+		marginLeft: -3,
+	},
+	pointSummaryLabel: {
+		fontSize: 12,
+		textAlign: "center" as "center",
+		fontWeight: "normal" as "normal",
+		width: 120,
+	},
+	pointSummaryValue: {
+		width: 120,
+		background: "#eee",
+		fontSize: 24,
+		fontWeight: "bold" as "bold",
+		lineHeight: "50px",
+		borderRadius: 2,
+		textAlign: "center" as "center",
+	},
+};
+
 interface IProps {
 	score: Score;
 }
@@ -29,40 +52,18 @@ class PointSummaries extends React.Component<IProps> {
 		];
 
 		return (
-			<table>
-				<style jsx>{`
-					table {
-						border-spacing: 3px;
-						margin-bottom: 20px;
-						margin-left: -3px;
-					}
-					.point-summary-label {
-						font-size: 12px;
-						text-align: center;
-						font-weight: normal;
-						width: 120px;
-					}
-					.point-summary-value {
-						width: 120px;
-						background: #eee;
-						font-size: 24px;
-						font-weight: bold;
-						line-height: 50px;
-						border-radius: 2px;
-						text-align: center;
-					}
-				`}</style>
+			<table css={styles.table}>
 				<tbody>
 					<tr>
 						{blocks.map(({ label }, i) => (
-							<th key={i} className={"point-summary-label"}>
+							<th key={i} css={styles.pointSummaryLabel}>
 								{label}
 							</th>
 						))}
 					</tr>
 					<tr>
 						{blocks.map(({ value }, i) => (
-							<td key={i} className={"point-summary-value"}>
+							<td key={i} css={styles.pointSummaryValue}>
 								{value}
 							</td>
 						))}

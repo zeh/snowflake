@@ -3,6 +3,31 @@ import * as React from "react";
 import Score from "../ladder/models/Score";
 import Ladder from "../ladder/models/Ladder";
 
+const styles = {
+	table: {
+		width: "100%",
+		borderSpacing: 3,
+		borderBottom: "2px solid #ccc",
+		paddingBottom: 20,
+		marginBottom: 20,
+		marginLeft: -3,
+	},
+	trackSelectorValue: {
+		lineHeight: "50px",
+		width: 50,
+		textAlign: "center" as "center",
+		background: "#eee",
+		fontWeight: "bold" as "bold",
+		fontSize: 24,
+		borderRadius: 3,
+		cursor: "pointer" as "pointer",
+	},
+	trackSelectorLabel: {
+		textAlign: "center" as "center",
+		fontSize: 9,
+	},
+};
+
 interface IProps {
 	ladder: Ladder;
 	score: Score;
@@ -14,37 +39,13 @@ class TrackSelector extends React.Component<IProps> {
 	public render(): JSX.Element {
 		const allTracks = this.props.ladder.getAllTracks();
 		return (
-			<table>
-				<style jsx>{`
-					table {
-						width: 100%;
-						border-spacing: 3px;
-						border-bottom: 2px solid #ccc;
-						padding-bottom: 20px;
-						margin-bottom: 20px;
-						margin-left: -3px;
-					}
-					.track-selector-value {
-						line-height: 50px;
-						width: 50px;
-						text-align: center;
-						background: #eee;
-						font-weight: bold;
-						font-size: 24px;
-						border-radius: 3px;
-						cursor: pointer;
-					}
-					.track-selector-label {
-						text-align: center;
-						font-size: 9px;
-					}
-				`}</style>
+			<table css={styles.table}>
 				<tbody>
 					<tr>
 						{allTracks.map((track) => (
 							<td
 								key={track.id}
-								className={"track-selector-label"}
+								css={styles.trackSelectorLabel}
 								onClick={() => this.props.setFocusedTrackIdFn(track.id)}
 							>
 								{track.name}
@@ -55,7 +56,7 @@ class TrackSelector extends React.Component<IProps> {
 						{allTracks.map((track) => (
 							<td
 								key={track.id}
-								className={"track-selector-value"}
+								css={styles.trackSelectorValue}
 								style={{
 									border:
 										"4px solid " +

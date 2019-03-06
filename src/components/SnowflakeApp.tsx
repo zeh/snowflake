@@ -12,6 +12,32 @@ import Score from "../ladder/models/Score";
 import { careerLadder } from "../ladder/Constants";
 import LZString from "lz-string";
 
+const styles = {
+	main: {
+		fontFamily: "Helvetica",
+		width: 960,
+		margin: "0 auto",
+	},
+	nameInput: {
+		border: "none",
+		display: "block",
+		borderBottom: "2px solid #fff",
+		fontSize: 30,
+		lineHeight: "40px",
+		fontWeight: "bold" as "bold",
+		width: 380,
+		marginBottom: 10,
+		":hover,:focus": {
+			borderBottom: "2px solid #ccc",
+			outline: 0,
+		},
+	},
+	a: {
+		color: "#888",
+		textDecoration: "none",
+	},
+};
+
 type ISnowflakeAppState = {
 	score: Score;
 	name: string;
@@ -90,37 +116,9 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 
 	public render(): JSX.Element {
 		return (
-			<main>
-				<style jsx global>{`
-					body {
-						font-family: Helvetica;
-					}
-					main {
-						width: 960px;
-						margin: 0 auto;
-					}
-					.name-input {
-						border: none;
-						display: block;
-						border-bottom: 2px solid #fff;
-						font-size: 30px;
-						line-height: 40px;
-						font-weight: bold;
-						width: 380px;
-						margin-bottom: 10px;
-					}
-					.name-input:hover,
-					.name-input:focus {
-						border-bottom: 2px solid #ccc;
-						outline: 0;
-					}
-					a {
-						color: #888;
-						text-decoration: none;
-					}
-				`}</style>
+			<main css={styles.main}>
 				<div style={{ margin: "19px auto 0", width: 142 }}>
-					<a href={"https://medium.com/"} target={"_blank"}>
+					<a css={styles.a} href={"https://medium.com/"} target={"_blank"}>
 						<Wordmark />
 					</a>
 				</div>
@@ -129,7 +127,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 						<form>
 							<input
 								type={"text"}
-								className={"name-input"}
+								css={styles.nameInput}
 								value={this.state.name}
 								onChange={(e) => this.setState({ name: e.target.value })}
 								placeholder={"Name"}
@@ -173,19 +171,19 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 				<div style={{ display: "flex", paddingBottom: "20px" }}>
 					<div style={{ flex: 1 }}>
 						Made with ❤️ by{" "}
-						<a href={"https://medium.engineering"} target={"_blank"}>
+						<a css={styles.a} href={"https://medium.engineering"} target={"_blank"}>
 							Medium Eng
 						</a>
 						. Learn about the{" "}
-						<a href={"https://medium.com/s/engineering-growth-framework"} target={"_blank"}>
+						<a css={styles.a} href={"https://medium.com/s/engineering-growth-framework"} target={"_blank"}>
 							growth framework
 						</a>
 						. Get the{" "}
-						<a href={"https://github.com/Medium/snowflake"} target={"_blank"}>
+						<a css={styles.a} href={"https://github.com/Medium/snowflake"} target={"_blank"}>
 							source code
 						</a>
 						. Read the{" "}
-						<a href={"https://medium.com/p/85e078bc15b7"} target={"_blank"}>
+						<a css={styles.a} href={"https://medium.com/p/85e078bc15b7"} target={"_blank"}>
 							terms of service
 						</a>
 						.

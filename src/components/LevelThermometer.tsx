@@ -13,6 +13,16 @@ const margins = {
 const height = 150;
 const width = 550;
 
+const styles = {
+	figure: {
+		margin: "0 0 0 -10px",
+	},
+	svg: {
+		width: width,
+		height: height + 10,
+	},
+};
+
 interface IProps {
 	ladder: Ladder;
 	score: Score;
@@ -108,17 +118,8 @@ class LevelThermometer extends React.Component<IProps> {
 		});
 		let cumulativePoints = 0;
 		return (
-			<figure>
-				<style jsx>{`
-					figure {
-						margin: 0 0 0 -10px;
-					}
-					svg {
-						width: ${width}px;
-						height: ${height + 10}px;
-					}
-				`}</style>
-				<svg>
+			<figure css={styles.figure}>
+				<svg css={styles.svg}>
 					<g transform={`translate(${margins.left},${margins.top})`}>
 						{Object.keys(categoryPoints).map((categoryKey, i) => {
 							const categoryPoint = categoryPoints[categoryKey];

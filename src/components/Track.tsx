@@ -3,6 +3,40 @@ import * as React from "react";
 import Score from "../ladder/models/Score";
 import Ladder from "../ladder/models/Ladder";
 
+const styles = {
+	track: {
+		margin: "0 0 20px 0",
+		paddingBottom: 20,
+		borderBottom: "2px solid #ccc",
+	},
+	h2: {
+		margin: "0 0 10px 0",
+	},
+	trackDescription: {
+		marginTop: 0,
+		paddingBottom: 20,
+		borderBottom: "2px solid #ccc",
+	},
+	table: {
+		borderSpacing: 3,
+		flex: 0,
+		marginRight: 50,
+	},
+	td: {
+		lineHeight: "50px",
+		width: 50,
+		textAlign: "center" as "center",
+		background: "#eee",
+		fontWeight: "bold" as "bold",
+		fontSize: 24,
+		borderRadius: 3,
+		cursor: "pointer" as "pointer",
+	},
+	ul: {
+		lineHeight: "1.5em",
+	},
+};
+
 interface IProps {
 	ladder: Ladder;
 	score: Score;
@@ -18,42 +52,11 @@ class Track extends React.Component<IProps> {
 		const currentMilestoneId = this.props.score.getTrackMilestone(this.props.trackId);
 		const currentMilestone = track.milestones[currentMilestoneId - 1];
 		return (
-			<div className={"track"}>
-				<style jsx>{`
-					div.track {
-						margin: 0 0 20px 0;
-						padding-bottom: 20px;
-						border-bottom: 2px solid #ccc;
-					}
-					h2 {
-						margin: 0 0 10px 0;
-					}
-					p.track-description {
-						margin-top: 0;
-						padding-bottom: 20px;
-						border-bottom: 2px solid #ccc;
-					}
-					table {
-						border-spacing: 3px;
-					}
-					td {
-						line-height: 50px;
-						width: 50px;
-						text-align: center;
-						background: #eee;
-						font-weight: bold;
-						font-size: 24px;
-						border-radius: 3px;
-						cursor: pointer;
-					}
-					ul {
-						line-height: 1.5em;
-					}
-				`}</style>
-				<h2>{track.name}</h2>
-				<p className={"track-description"}>{track.description}</p>
+			<div css={styles.track}>
+				<h2 css={styles.h2}>{track.name}</h2>
+				<p css={styles.trackDescription}>{track.description}</p>
 				<div style={{ display: "flex" }}>
-					<table style={{ flex: 0, marginRight: 50 }}>
+					<table css={styles.table}>
 						<tbody style={{ display: "flex", flexDirection: "column-reverse" }}>
 							{track.milestones.map((milestone, index) => {
 								const isMet = index <= currentMilestoneId;
@@ -61,6 +64,7 @@ class Track extends React.Component<IProps> {
 								return (
 									<tr key={index}>
 										<td
+											css={styles.td}
 											onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, index)}
 											style={{
 												border: `4px solid ${index === currentMilestoneId ? "#000" : isMet ? color : "#eee"}`,
@@ -78,13 +82,13 @@ class Track extends React.Component<IProps> {
 						<div style={{ flex: 1 }}>
 							<h3>{currentMilestone.summary}</h3>
 							<h4>Example behaviors:</h4>
-							<ul>
+							<ul css={styles.ul}>
 								{currentMilestone.signals.map((signal, i) => (
 									<li key={i}>{signal}</li>
 								))}
 							</ul>
 							<h4>Example tasks:</h4>
-							<ul>
+							<ul css={styles.ul}>
 								{currentMilestone.examples.map((example, i) => (
 									<li key={i}>{example}</li>
 								))}
