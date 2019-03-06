@@ -7,6 +7,7 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 ### Changed
 
 - Added a changelog file
+- State hashes are saved as a compressed JSON payload, rather than a raw array of fixed fields; this makes state easier to change
 
 ## [1.0.0] - 2019-03-06
 
