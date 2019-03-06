@@ -1,35 +1,53 @@
 # Snowflake
 
-This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake), but in TypeScript (instead of the original Flow).
+This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake), but in TypeScript (instead of the original Flow) and adapted to Work&Co's (research) needs.
 
 Read more about their tool in their [growth framework documentation](https://medium.com/s/engineering-growth-framework).
 It is also hosted [publicly](https://snowflake.medium.com).
 
 ## Contributions
 
-This is meant to duplicate the original tool's functionality. Little fixes might be added but this fork is unlikely to detract from the original tool. Fixes by third-party forks might be merged too.
+This is meant to duplicate the original tool's functionality. Fixes by third-party forks might be merged. New featrures might be added.
 
-## Installation
+## First-time setup
 
-Get yarn if you don’t have it already:
+1. Install Node.js
 
-`npm install -g yarn`
+2. Get yarn if you don’t have it already
 
-Install dependencies:
+    ```shell
+    npm install -g yarn
+    ```
 
-`yarn`
+3. Install dependencies:
 
-### Running the dev server
+    ```shell
+    yarn
+    ```
 
-`yarn dev`
+## Development
 
-### Building
+First, run the server:
 
-`yarn export`
+```shell
+yarn dev
+```
 
-This will put a static version of the site in `out/`.
+This will start hosting a version of the site served on [http://localhost:3000](http://localhost:3000).
+
+Modifying any of the source files will trigger a new build automatically.
+
+## Building
+
+To build a static version of the site in `out/` using Next.js, do:
+
+```shell
+yarn export
+```
 
 ## Future work
 
-* Load initial data from a file, to improve flexibility.
-* Add restricted job title selection and validation.
+* Allow job title selection with sorting based on stronger categories
+* Allow different ladders from different JSON files
+* Tweak and create a Work&Co-specific ladder
+* Add archetype calculation
