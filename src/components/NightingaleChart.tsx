@@ -20,7 +20,7 @@ class NightingaleChart extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
 
-	  const allTracks = this.props.ladder.getAllTracks();
+    const allTracks = this.props.ladder.getAllTracks();
     const arcMilestones = this.props.ladder.getMilestoneIds();
 
     this.colorScale = d3.scaleSequential(d3.interpolateWarm)
@@ -43,8 +43,8 @@ class NightingaleChart extends React.Component<Props> {
 
   render() {
     const currentMilestoneId = this.props.score.getTrackMilestone(this.props.focusedTrackId)
-	const allTracks = this.props.ladder.getAllTracks();
-	const arcMilestones = this.props.ladder.getMilestoneIds();
+    const allTracks = this.props.ladder.getAllTracks();
+    const arcMilestones = this.props.ladder.getMilestoneIds();
     return (
       <figure>
         <style jsx>{`
@@ -69,12 +69,12 @@ class NightingaleChart extends React.Component<Props> {
           <g transform={`translate(${width/2},${width/2}) rotate(-33.75)`}>
             {allTracks.map((track, i) => {
               const isCurrentTrack = track.id == this.props.focusedTrackId
-			  const color = this.props.ladder.getCategoryColorForTrack(track.id)
+              const color = this.props.ladder.getCategoryColorForTrack(track.id)
               return (
                 <g key={track.id} transform={`rotate(${i * 360 / allTracks.length})`}>
                   {arcMilestones.map((milestoneId) => {
                     const isCurrentMilestone = isCurrentTrack && milestoneId == currentMilestoneId
-					const isMet = this.props.score.getTrackMilestone(track.id) >= milestoneId || milestoneId == 0
+                    const isMet = this.props.score.getTrackMilestone(track.id) >= milestoneId || milestoneId == 0
                     return (
                       <path
                           key={milestoneId}

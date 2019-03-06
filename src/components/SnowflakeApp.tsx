@@ -147,7 +147,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           </div>
           <div style={{flex: 0}}>
             <NightingaleChart
-				ladder={careerLadder}
+                ladder={careerLadder}
                 score={this.state.score}
                 focusedTrackId={this.state.focusedTrackId}
                 handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
