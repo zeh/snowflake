@@ -1,7 +1,8 @@
 import * as d3 from 'd3'
-import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale } from '../constants'
 import * as React from 'react'
-import { MilestoneMap } from '../constants'
+
+import Ladder from "../ladder/models/Ladder";
+import Score from "../ladder/models/Score";
 
 const margins = {
   top: 30,
@@ -13,7 +14,8 @@ const height = 150
 const width = 550
 
 interface Props {
-  milestoneByTrack: MilestoneMap,
+  ladder: Ladder
+  score: Score
 }
 
 class LevelThermometer extends React.Component<Props> {
@@ -26,18 +28,20 @@ class LevelThermometer extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
 
+    const pointsToLevelsKeys = this.props.ladder.pointsToLevels.map((ptl) => ptl.points.toString(10));
+
     this.pointScale = d3.scaleLinear()
       .domain([0, 135])
       .rangeRound([0, width - margins.left - margins.right]);
 
     this.topAxisFn = d3.axisTop()
       .scale(this.pointScale)
-      .tickValues(Object.keys(pointsToLevels))
-      .tickFormat(points => pointsToLevels[points])
+      .tickValues(pointsToLevelsKeys)
+      .tickFormat((points, i) => this.props.ladder.pointsToLevels[i].level)
 
     this.bottomAxisFn = d3.axisBottom()
       .scale(this.pointScale)
-      .tickValues(Object.keys(pointsToLevels))
+      .tickValues(pointsToLevelsKeys)
   }
 
   componentDidMount() {
@@ -69,10 +73,10 @@ class LevelThermometer extends React.Component<Props> {
          + "z";
   }
   render() {
-    let categoryPoints = categoryPointsFromMilestoneMap(this.props.milestoneByTrack)
+    let categoryPoints = this.props.score.getScoreByCategory()
     let lastCategoryIndex = 0
-    categoryPoints.forEach((categoryPoint, i) => {
-      if (categoryPoint.points) lastCategoryIndex = i
+    Object.keys(categoryPoints).forEach((categoryKey, i) => {
+      if (categoryPoints[categoryKey]) lastCategoryIndex = i
     })
     let cumulativePoints = 0
     return (
@@ -88,23 +92,25 @@ class LevelThermometer extends React.Component<Props> {
         `}</style>
         <svg>
           <g transform={`translate(${margins.left},${margins.top})`}>
-            {categoryPoints.map((categoryPoint, i) => {
+            {Object.keys(categoryPoints).map((categoryKey, i) => {
+              const categoryPoint = categoryPoints[categoryKey]
+              const color = this.props.ladder.getCategoryColorForCategory(categoryKey)
               const x = this.pointScale(cumulativePoints)
-              const width = this.pointScale(cumulativePoints + categoryPoint.points) - x
-              cumulativePoints += categoryPoint.points
+              const width = this.pointScale(cumulativePoints + categoryPoint) - x
+              cumulativePoints += categoryPoint
               return (i != lastCategoryIndex ?
                 <rect
-                    key={categoryPoint.categoryId}
+                    key={`${categoryKey}-react`}
                     x={x}
                     y={0}
                     width={width}
                     height={height - margins.top - margins.bottom}
-                    style={{fill: categoryColorScale(categoryPoint.categoryId), borderRight: "1px solid #000"}}
+                    style={{fill: color, borderRight: "1px solid #000"}}
                     /> :
                 <path
-                    key={categoryPoint.categoryId}
+                    key={`${categoryKey}-path`}
                     d={this.rightRoundedRect(x, 0, width, height - margins.top - margins.bottom, 3)}
-                    style={{fill: categoryColorScale(categoryPoint.categoryId)}}
+                    style={{fill: color}}
                     />
               )
             })}

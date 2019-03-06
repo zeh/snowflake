@@ -1,16 +1,15 @@
 import * as React from 'react'
-import { eligibleTitles } from '../constants'
-import { MilestoneMap } from '../constants'
+import Score from "../ladder/models/Score";
 
 interface Props {
-  milestoneByTrack: MilestoneMap,
+  score: Score,
   currentTitle: string,
   setTitleFn: (arg0: string) => void
 }
 
 class TitleSelector extends React.Component<Props> {
   render() {
-    const titles = eligibleTitles(this.props.milestoneByTrack)
+    const titles = this.props.score.getEligibleTitles()
     return <select value={this.props.currentTitle} onChange={e => this.props.setTitleFn(e.target.value)}>
       <style jsx>{`
         select {

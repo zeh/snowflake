@@ -1,36 +1,22 @@
-import { pointsToLevels, totalPointsFromMilestoneMap } from '../constants'
-import { MilestoneMap } from '../constants'
 import * as React from 'react'
 
+import Score from "../ladder/models/Score";
+
 interface Props {
-  milestoneByTrack: MilestoneMap
+  score: Score
 }
 
 class PointSummaries extends React.Component<Props> {
   render() {
-    const totalPoints = totalPointsFromMilestoneMap(this.props.milestoneByTrack)
-
-	let currentLevel
-	let nextLevel
-
-    let pointsForCurrentLevel = totalPoints
-    while (!(currentLevel = pointsToLevels[pointsForCurrentLevel])) {
-      pointsForCurrentLevel--
-    }
-
-    let pointsToNextLevel: string | number = 1
-    while (!(nextLevel = pointsToLevels[totalPoints + pointsToNextLevel])) {
-      pointsToNextLevel++
-      if (pointsToNextLevel > 135) {
-        pointsToNextLevel = 'N/A'
-        break
-      }
-    }
+    const totalPoints = this.props.score.getScore()
+    const currentLevel = this.props.score.getLevel();
+    const nextLevel = this.props.score.getNextLevel();
+    const pointsToNextLevel = nextLevel ? `${nextLevel.points - totalPoints}` : "N/A";
 
     const blocks = [
       {
         label: 'Current level',
-        value: currentLevel
+        value: currentLevel.level
       },
       {
         label: 'Total points',

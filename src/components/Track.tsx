@@ -1,17 +1,21 @@
-import { tracks, milestones, categoryColorScale } from '../constants'
 import * as React from 'react'
-import { MilestoneMap, TrackId, Milestone } from '../constants'
+
+import Score from "../ladder/models/Score";
+import Ladder from "../ladder/models/Ladder";
 
 interface Props {
-  milestoneByTrack: MilestoneMap,
-  trackId: TrackId,
-  handleTrackMilestoneChangeFn: (arg0: TrackId, arg1: Milestone) => void
+  ladder: Ladder,
+  score: Score,
+  trackId: string,
+  handleTrackMilestoneChangeFn: (arg0: string, arg1: number) => void
 }
 
 class Track extends React.Component<Props> {
   render() {
-    const track = tracks[this.props.trackId]
-    const currentMilestoneId = this.props.milestoneByTrack[this.props.trackId]
+    const track = this.props.ladder.getTrackById(this.props.trackId)
+    if (!track) return null;
+
+    const currentMilestoneId = this.props.score.getTrackMilestone(this.props.trackId)
     const currentMilestone = track.milestones[currentMilestoneId - 1]
     return (
       <div className="track">
@@ -46,18 +50,19 @@ class Track extends React.Component<Props> {
             line-height: 1.5em;
           }
         `}</style>
-        <h2>{track.displayName}</h2>
+        <h2>{track.name}</h2>
         <p className="track-description">{track.description}</p>
         <div style={{display: 'flex'}}>
           <table style={{flex: 0, marginRight: 50}}>
-            <tbody>
-              {milestones.slice().reverse().map((milestone) => {
-                const isMet = milestone <= currentMilestoneId
+            <tbody style={{display: 'flex', flexDirection: 'column-reverse'}}>
+              {track.milestones.map((milestone, index) => {
+                const isMet = index <= currentMilestoneId
+                const color = this.props.ladder.getCategoryColorForTrack(track.id);
                 return (
-                  <tr key={milestone}>
-                    <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
-                        style={{border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined}}>
-                      {milestone}
+                  <tr key={index}>
+                    <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, index)}
+                        style={{border: `4px solid ${index === currentMilestoneId ? '#000' : isMet ? color : '#eee'}`, background: isMet ? color : undefined}}>
+                      {index}
                     </td>
                   </tr>
                 )

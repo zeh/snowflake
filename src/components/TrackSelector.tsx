@@ -1,15 +1,18 @@
 import * as React from 'react'
-import { trackIds, tracks, categoryColorScale } from '../constants'
-import { MilestoneMap, TrackId } from '../constants'
+
+import Score from "../ladder/models/Score";
+import Ladder from "../ladder/models/Ladder";
 
 interface Props {
-  milestoneByTrack: MilestoneMap,
-  focusedTrackId: TrackId,
-  setFocusedTrackIdFn: (arg0: TrackId) => void
+  ladder: Ladder,
+  score: Score,
+  focusedTrackId: string,
+  setFocusedTrackIdFn: (arg0: string) => void
 }
 
 class TrackSelector extends React.Component<Props> {
   render() {
+    const allTracks = this.props.ladder.getAllTracks();
     return (
       <table>
         <style jsx>{`
@@ -38,18 +41,18 @@ class TrackSelector extends React.Component<Props> {
         `}</style>
         <tbody>
           <tr>
-            {trackIds.map(trackId => (
-              <td key={trackId} className="track-selector-label" onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
-                {tracks[trackId].displayName}
+            {allTracks.map(track => (
+              <td key={track.id} className="track-selector-label" onClick={() => this.props.setFocusedTrackIdFn(track.id)}>
+                {track.name}
               </td>
             ))}
           </tr>
           <tr>
-            {trackIds.map(trackId => (
-              <td key={trackId} className="track-selector-value"
-                  style={{border: '4px solid ' + (trackId == this.props.focusedTrackId ? '#000': categoryColorScale(tracks[trackId].category)), background: categoryColorScale(tracks[trackId].category)}}
-                  onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
-                {this.props.milestoneByTrack[trackId]}
+            {allTracks.map(track => (
+              <td key={track.id} className="track-selector-value"
+                  style={{border: '4px solid ' + (track.id == this.props.focusedTrackId ? '#000': this.props.ladder.getCategoryColorForTrack(track.id)), background: this.props.ladder.getCategoryColorForTrack(track.id)}}
+                  onClick={() => this.props.setFocusedTrackIdFn(track.id)}>
+                {this.props.score.getTrackMilestone(track.id)}
               </td>
             ))}
           </tr>
