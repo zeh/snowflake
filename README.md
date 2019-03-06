@@ -1,9 +1,8 @@
 # Snowflake
 
-This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake), but in TypeScript (instead of the original Flow) and adapted to Work&Co's (research) needs.
+This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake) (created as part of their [growth framework documentation](https://medium.com/s/engineering-growth-framework)), but using TypeScript instead of Flow, and adapted to Work&Co's (research) needs.
 
-Read more about their tool in their [growth framework documentation](https://medium.com/s/engineering-growth-framework).
-It is also hosted [publicly](https://snowflake.medium.com).
+Check the list of recent changes on the [changelog](CHANGELOG.md).
 
 ## Contributions
 
@@ -11,19 +10,25 @@ This is meant to duplicate the original tool's functionality. Fixes by third-par
 
 ## First-time setup
 
-1. Install Node.js
+After pulling the contents of this repository, install all the needed tools to start development.
 
-2. Get yarn if you don’t have it already
+### 1. Install Node.js [using the official installer](https://nodejs.org/en/) or through Homebrew
 
-    ```shell
-    npm install -g yarn
-    ```
+```shell
+brew install node
+```
 
-3. Install dependencies:
+### 2. Install yarn if you don’t have it already
 
-    ```shell
-    yarn
-    ```
+```shell
+npm install -g yarn
+```
+
+### 3. Install dependencies
+
+```shell
+yarn
+```
 
 ## Development
 
@@ -35,7 +40,7 @@ yarn dev
 
 This will start hosting a version of the site served on [http://localhost:3000](http://localhost:3000).
 
-Modifying any of the source files will trigger a new build automatically.
+Modifying any of the source files will automatically trigger a new build.
 
 ## Building
 
@@ -45,9 +50,18 @@ To build a static version of the site in `out/` using Next.js, do:
 yarn export
 ```
 
+This will create static files that are ready to be deployed to a standard web server.
+
+## Editing
+
+Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) to see changes reflected in how the application behaves.
+
 ## Future work
 
 * Allow job title selection with sorting based on stronger categories
 * Allow different ladders from different JSON files
 * Tweak and create a Work&Co-specific ladder
 * Add archetype calculation
+* Deploy to netlify
+* Allow loading external JSON files
+* Add ESLint
