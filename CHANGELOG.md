@@ -12,6 +12,7 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 ### Changed
 
 - State hashes are saved as a compressed JSON payload, rather than a raw array of fixed fields; this makes state easier to change
+- Moved all styles to [Emotion](https://emotion.sh/docs/object-styles)
 
 ## [1.0.0] - 2019-03-06
 
