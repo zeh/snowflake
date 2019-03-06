@@ -5,6 +5,7 @@
   "repository": "https://github.com/Medium/eng-growth",
   "license": "MIT",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "d3": "^5.9.1",
     "lz-string": "^1.4.4",
     "next": "^8.0.3",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@emotion/babel-preset-css-prop": "^10.0.7",
     "@types/d3": "^5.7.1",
     "@types/lz-string": "^1.3.33",
     "@types/react": "^16.8.5",
