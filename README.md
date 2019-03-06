@@ -64,4 +64,6 @@ Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) t
 * Add archetype calculation
 * Deploy to netlify
 * Allow loading external JSON files
-* Add ESLint
+* Add ESLint, bring back semicolons
+* Port styles to [Emotion](https://emotion.sh/docs/object-styles)
+* Parse querystring in a more flexible way (add track id, use field names, compress+base64 the selections)
