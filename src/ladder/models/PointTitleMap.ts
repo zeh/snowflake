@@ -3,7 +3,7 @@ export default class PointsTitleMap {
 	public readonly min?: number;
 	public readonly max?: number;
 
-	constructor(name: string, min?: number, max?: number) {
+	public constructor(name: string, min?: number, max?: number) {
 		this.name = name;
 		this.min = min;
 		this.max = max;

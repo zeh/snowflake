@@ -6,7 +6,7 @@ export default class Category {
 	public readonly color: string;
 	public readonly tracks: Track[] = [];
 
-	constructor(id: string, name: string, color: string) {
+	public constructor(id: string, name: string, color: string) {
 		this.id = id;
 		this.name = name;
 		this.color = color;

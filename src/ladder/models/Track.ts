@@ -6,7 +6,7 @@ export default class Track {
 	public readonly description: string;
 	public readonly milestones: Milestone[] = [];
 
-	constructor(id: string, name: string, description: string) {
+	public constructor(id: string, name: string, description: string) {
 		this.id = id;
 		this.name = name;
 		this.description = description;

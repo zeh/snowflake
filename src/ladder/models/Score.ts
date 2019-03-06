@@ -1,18 +1,18 @@
 import Ladder from "./Ladder";
 import PointsLevelMap from "./PointLevelMap";
 
-type IScoreMap = { [ key: string ] : number };
+type IScoreMap = { [key: string]: number };
 
 export default class Score {
 	public readonly scores: IScoreMap = {};
 
 	private readonly ladder: Ladder;
 
-	constructor(ladder: Ladder) {
+	public constructor(ladder: Ladder) {
 		this.ladder = ladder;
 	}
 
-	getTrackMilestone(trackId: string): number {
+	public getTrackMilestone(trackId: string): number {
 		if (this.scores.hasOwnProperty(trackId)) {
 			return this.scores[trackId];
 		} else {
@@ -20,11 +20,11 @@ export default class Score {
 		}
 	}
 
-	setTrackMilestone(trackId: string, milestone: number) {
+	public setTrackMilestone(trackId: string, milestone: number): void {
 		this.scores[trackId] = milestone;
 	}
 
-	getScore(): number {
+	public getScore(): number {
 		let total = 0;
 		for (const trackId in this.scores) {
 			total += this.getScoreForTrack(trackId);
@@ -32,20 +32,22 @@ export default class Score {
 		return total;
 	}
 
-	getScoreForTrack(trackId: string) {
+	public getScoreForTrack(trackId: string): number {
 		return this.ladder.getMilestonePoints(this.scores[trackId] || 0);
 	}
 
-	getEligibleTitles(): string[] {
+	public getEligibleTitles(): string[] {
 		const totalPoints = this.getScore();
-		return this.ladder.pointsToTitles.filter((ptt) => {
-			const satisfiesMin = (ptt.min === undefined || totalPoints >= ptt.min);
-			const satisfiesMax = (ptt.max === undefined || totalPoints <= ptt.max);
-			return satisfiesMin && satisfiesMax;
-		}).map((ptt) => ptt.name);
+		return this.ladder.pointsToTitles
+			.filter((ptt) => {
+				const satisfiesMin = ptt.min === undefined || totalPoints >= ptt.min;
+				const satisfiesMax = ptt.max === undefined || totalPoints <= ptt.max;
+				return satisfiesMin && satisfiesMax;
+			})
+			.map((ptt) => ptt.name);
 	}
 
-	getLevel(): PointsLevelMap {
+	public getLevel(): PointsLevelMap {
 		const points = this.getScore();
 		const allLevels = this.ladder.pointsToLevels;
 		let currentLevel = allLevels[0];
@@ -55,14 +57,14 @@ export default class Score {
 		return currentLevel;
 	}
 
-	getNextLevel(): PointsLevelMap | undefined  {
+	public getNextLevel(): PointsLevelMap | undefined {
 		const points = this.getScore();
 		const allLevels = this.ladder.pointsToLevels;
 		return allLevels.find((ptl) => ptl.points > points);
 	}
 
-	getScoreByCategory(): { [key: string]: number } {
-		const scores: { [key: string]: number} = {};
+	public getScoreByCategory(): { [key: string]: number } {
+		const scores: { [key: string]: number } = {};
 		for (const category of this.ladder.categories) {
 			let total = 0;
 			for (const track of category.tracks) {
@@ -73,7 +75,7 @@ export default class Score {
 		return scores;
 	}
 
-	getState(): IScoreMap {
+	public getState(): IScoreMap {
 		const newMap: IScoreMap = {};
 		Object.keys(this.scores).forEach((trackId) => {
 			const milestoneIndex = this.scores[trackId];
@@ -84,7 +86,7 @@ export default class Score {
 		return newMap;
 	}
 
-	setState(newState: IScoreMap) {
+	public setState(newState: IScoreMap): void {
 		Object.keys(newState).forEach((trackId) => {
 			this.scores[trackId] = newState[trackId];
 		});

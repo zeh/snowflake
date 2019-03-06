@@ -10,11 +10,9 @@ export default class Ladder {
 	public readonly pointsToLevels: PointsLevelMap[] = [];
 	public readonly pointsToTitles: PointsTitleMap[] = [];
 
-	constructor() {
+	public constructor() {}
 
-	}
-
-	static fromJSON(json: any): Ladder {
+	public static fromJSON(json: any): Ladder {
 		const ladder = new Ladder();
 
 		if (json) {
@@ -23,7 +21,7 @@ export default class Ladder {
 			if (categories && typeof categories === "object") {
 				for (const categoryKey in categories) {
 					// Create individual category
-					const categoryData: any = categories[categoryKey];
+					const categoryData = categories[categoryKey];
 					const category = new Category(categoryKey, categoryData.name, categoryData.color);
 					ladder.categories.push(category);
 
@@ -32,18 +30,18 @@ export default class Ladder {
 					if (tracks && typeof tracks === "object") {
 						for (const trackKey in tracks) {
 							// Create individual track
-							const trackData: any = tracks[trackKey];
+							const trackData = tracks[trackKey];
 							const track = new Track(trackKey, trackData.name, trackData.description);
 							category.tracks.push(track);
 
 							// Parse milestones
 							const milestones = trackData.milestones;
 							if (milestones && Array.isArray(milestones)) {
-								milestones.forEach((milestoneData: any) => {
+								milestones.forEach((milestoneData) => {
 									// Create individual milestone
 									const milestone = new Milestone(milestoneData.summary, milestoneData.signals, milestoneData.examples);
 									track.milestones.push(milestone);
-								})
+								});
 							}
 						}
 					}
@@ -61,14 +59,14 @@ export default class Ladder {
 						if (typeof points === "number") {
 							ladder.milestonesToPoints.push(points);
 						}
-					})
+					});
 				}
 
 				// Parse points-to-levels
 				const pointsToLevels = mappings.pointsToLevels;
 				if (pointsToLevels && typeof pointsToLevels === "object") {
 					for (const ptlKey in pointsToLevels) {
-						const ptlData: any = pointsToLevels[ptlKey];
+						const ptlData = pointsToLevels[ptlKey];
 						const ptlMin: number = parseFloat(ptlKey);
 						if (ptlData && typeof ptlMin === "number" && !isNaN(ptlMin)) {
 							const ptl = new PointsLevelMap(ptlMin, ptlData);
@@ -86,7 +84,7 @@ export default class Ladder {
 						const max = parseFloat(pttData.max) || undefined;
 						const ptt = new PointsTitleMap(name, min, max);
 						ladder.pointsToTitles.push(ptt);
-					})
+					});
 				}
 			}
 		}
@@ -98,7 +96,7 @@ export default class Ladder {
 		let tracks: Track[] = [];
 		this.categories.forEach((category) => {
 			tracks = tracks.concat(category.tracks);
-		})
+		});
 		return tracks;
 	}
 
@@ -110,7 +108,7 @@ export default class Ladder {
 		return undefined;
 	}
 
-	public getMilestonePoints(milestoneIndex: number) {
+	public getMilestonePoints(milestoneIndex: number): number {
 		if (milestoneIndex === 0) return 0;
 		if (milestoneIndex < this.milestonesToPoints.length - 1) return this.milestonesToPoints[milestoneIndex - 1];
 		return this.milestonesToPoints[this.milestonesToPoints.length - 1];
@@ -132,7 +130,7 @@ export default class Ladder {
 	public getCategoryForTrack(trackId: string): Category | undefined {
 		return this.categories.find((c) => {
 			return c.tracks.some((t) => t.id === trackId);
-		})
+		});
 	}
 
 	public getCategoryColorForTrack(trackId: string): string {
