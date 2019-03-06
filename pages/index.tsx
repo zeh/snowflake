@@ -1,5 +1,8 @@
-import SnowflakeApp from '../src/components/SnowflakeApp'
+import * as React from "react";
+import SnowflakeApp from "../src/components/SnowflakeApp";
 
-export default () => <div>
-  <SnowflakeApp />
-</div>
+export default () => (
+	<div>
+		<SnowflakeApp />
+	</div>
+);
