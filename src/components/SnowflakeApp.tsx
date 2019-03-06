@@ -10,6 +10,7 @@ import PointSummaries from '../components/PointSummaries'
 import TitleSelector from '../components/TitleSelector'
 import Score from "../ladder/models/Score";
 import { careerLadder } from '../ladder/Constants';
+import LZString from "lz-string";
 
 type SnowflakeAppState = {
   score: Score,
@@ -23,13 +24,20 @@ const allTracks = careerLadder.getAllTracks();
 const hashToState = (hash: string): SnowflakeAppState | null => {
   if (!hash) return null
   const result = defaultState()
-  const hashValues = hash.split('#')[1].split(',')
-  if (!hashValues) return null
-  allTracks.forEach((track, i) => {
-    result.score.setTrackMilestone(track.id, Number(hashValues[i]))
-  })
-  if (hashValues[16]) result.name = decodeURI(hashValues[16])
-  if (hashValues[17]) result.title = decodeURI(hashValues[17])
+  const hashStateRaw = LZString.decompressFromEncodedURIComponent(hash);
+  if (hashStateRaw && typeof hashStateRaw === "string") {
+    const hashState = JSON.parse(hashStateRaw);
+    if (hashState) {
+      const {
+        name,
+        title,
+        ...milestoneIds
+      } = hashState;
+      result.name = name
+      result.title = title
+      result.score.setState(milestoneIds);
+    }
+  }
   return result
 }
 
@@ -53,8 +61,13 @@ const defaultState = (): SnowflakeAppState => {
 
 const stateToHash = (state: SnowflakeAppState) => {
   if (!state || !state.score) return null
-  const values = [ ...allTracks.map(track => state.score.getTrackMilestone(track.id)), encodeURI(state.name), encodeURI(state.title)]
-  return values.join(',')
+  const savedState = {
+    ...state.score.getState(),
+    name: state.name,
+    title: state.title,
+  };
+  const savedStateRaw = JSON.stringify(savedState);
+  return LZString.compressToEncodedURIComponent(savedStateRaw);
 }
 
 interface Props {}
@@ -71,7 +84,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
   }
 
   componentDidMount() {
-    const state = hashToState(window.location.hash)
+    const state = hashToState(window.location.hash.substr(1))
     if (state) {
       this.setState(state)
     } else {
