@@ -1,8 +1,10 @@
 import Ladder from "./Ladder";
 import PointsLevelMap from "./PointLevelMap";
 
+type IScoreMap = { [ key: string ] : number };
+
 export default class Score {
-	public readonly scores: { [ key: string ] : number } = {};
+	public readonly scores: IScoreMap = {};
 
 	private readonly ladder: Ladder;
 
@@ -69,5 +71,22 @@ export default class Score {
 			scores[category.id] = total;
 		}
 		return scores;
+	}
+
+	getState(): IScoreMap {
+		const newMap: IScoreMap = {};
+		Object.keys(this.scores).forEach((trackId) => {
+			const milestoneIndex = this.scores[trackId];
+			if (typeof milestoneIndex === "number") {
+				newMap[trackId] = milestoneIndex;
+			}
+		});
+		return newMap;
+	}
+
+	setState(newState: IScoreMap) {
+		Object.keys(newState).forEach((trackId) => {
+			this.scores[trackId] = newState[trackId];
+		});
 	}
 }
