@@ -4,9 +4,13 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
-### Changed
+### Added
 
 - Added a changelog file
+- The source code is now using ESLint and Prettier
+
+### Changed
+
 - State hashes are saved as a compressed JSON payload, rather than a raw array of fixed fields; this makes state easier to change
 
 ## [1.0.0] - 2019-03-06
