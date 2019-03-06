@@ -14,7 +14,9 @@
   "scripts": {
     "dev": "next",
     "export": "next build && next export",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint src/**/*.ts src/**/*.tsx pages/**/*.tsx",
+    "lint:fix": "eslint src/**/*.ts src/**/*.tsx pages/**/*.tsx --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -22,7 +24,11 @@
     "@types/lz-string": "^1.3.33",
     "@types/react": "^16.8.5",
     "@types/react-dom": "^16.8.2",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
     "@zeit/next-typescript": "^1.1.1",
+    "eslint": "^5.15.1",
+    "eslint-plugin-react": "^7.12.4",
     "typescript": "^3.3.3333"
   }
 }
