@@ -8,6 +8,7 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 - Added a changelog file
 - The source code is now using ESLint and Prettier
+- Allow loading career leader rules from different template JSONs
 
 ### Changed
 

@@ -59,7 +59,6 @@ Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) t
 ## Future work
 
 * Allow job title selection with sorting based on stronger categories
-* Allow different ladders from different JSON files
 * Tweak and create a Work&Co-specific ladder
 * Add archetype calculation
 * Deploy to netlify
