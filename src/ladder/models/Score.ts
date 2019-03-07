@@ -20,6 +20,17 @@ export default class Score {
 		}
 	}
 
+	public getTrackMilestoneNormalizedLevel(trackId: string): number {
+		const milestoneIndex = this.getTrackMilestone(trackId);
+		const track = this.ladder.getTrackById(trackId);
+		if (track) {
+			const max = track.milestones.length;
+			return milestoneIndex / max;
+		} else {
+			return 0;
+		}
+	}
+
 	public setTrackMilestone(trackId: string, milestone: number): void {
 		this.scores[trackId] = milestone;
 	}
@@ -73,6 +84,27 @@ export default class Score {
 			scores[category.id] = total;
 		}
 		return scores;
+	}
+
+	public getArchetypes(): Array<{ name: string; scale: number }> {
+		const archetypes: Array<{ name: string; scale: number }> = [];
+
+		const pwas = this.ladder.pointWeightsToArchetypes;
+		for (const pwa of pwas) {
+			let total = 0;
+			let max = 0;
+			for (const trackId in pwa.weights) {
+				const scale = pwa.weights[trackId];
+				total += this.getTrackMilestoneNormalizedLevel(trackId) * scale;
+				max += scale;
+			}
+
+			if (total > 0) {
+				archetypes.push({ name: pwa.name, scale: total / max });
+			}
+		}
+
+		return archetypes;
 	}
 
 	public getState(): IScoreMap {

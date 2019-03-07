@@ -13,6 +13,7 @@ import CareerLadders from "../ladder/CareerLadders";
 import Ladder from "../ladder/models/Ladder";
 import TrackModel from "../ladder/models/Track";
 import Selector from "./Selector";
+import ArchetypeSummary from "./ArchetypeSummary";
 
 const styles = {
 	main: {
@@ -174,6 +175,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 							/>
 						</form>
 						<PointSummaries score={this.state.score} />
+						<ArchetypeSummary ladder={this.state.ladder} score={this.state.score} />
 						<LevelThermometer ladder={this.state.ladder} score={this.state.score} />
 					</div>
 					<div style={{ flex: 0 }}>

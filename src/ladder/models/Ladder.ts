@@ -3,12 +3,14 @@ import Track from "./Track";
 import Milestone from "./Milestone";
 import PointsLevelMap from "./PointLevelMap";
 import PointsTitleMap from "./PointTitleMap";
+import PointWeightsArchetypeMap from "./PointWeightsArchetypeMap";
 
 export default class Ladder {
 	public readonly categories: Category[] = [];
 	public readonly milestonesToPoints: number[] = [];
 	public readonly pointsToLevels: PointsLevelMap[] = [];
 	public readonly pointsToTitles: PointsTitleMap[] = [];
+	public readonly pointWeightsToArchetypes: PointWeightsArchetypeMap[] = [];
 
 	public constructor() {}
 
@@ -86,6 +88,26 @@ export default class Ladder {
 						ladder.pointsToTitles.push(ptt);
 					});
 				}
+
+				// Parse archetypes
+				const pointWeightsToArchetypes = mappings.pointWeightsToArchetypes;
+				if (pointWeightsToArchetypes && Array.isArray(pointWeightsToArchetypes)) {
+					pointWeightsToArchetypes.forEach((pwaData) => {
+						const name = pwaData.name || "?";
+						const weights: { [key: string]: number } = {};
+						const weightsData = pwaData.weights;
+						if (weightsData && typeof weightsData === "object") {
+							for (const weightKey in weightsData) {
+								const weightData = weightsData[weightKey];
+								if (weightData && typeof weightData === "number") {
+									weights[weightKey] = weightData;
+								}
+							}
+						}
+						const pwa = new PointWeightsArchetypeMap(name, weights);
+						ladder.pointWeightsToArchetypes.push(pwa);
+					});
+				}
 			}
 		}
 
@@ -141,5 +163,9 @@ export default class Ladder {
 	public getCategoryColorForCategory(categoryId: string): string {
 		const category = this.categories.find((category) => category.id === categoryId);
 		return category ? category.color : "#ff00ff";
+	}
+
+	public hasArchetypes(): boolean {
+		return this.pointWeightsToArchetypes.length > 0;
 	}
 }
