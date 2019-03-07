@@ -7,7 +7,6 @@ import Track from "../components/Track";
 import Wordmark from "../components/Wordmark";
 import LevelThermometer from "../components/LevelThermometer";
 import PointSummaries from "../components/PointSummaries";
-import TitleSelector from "../components/TitleSelector";
 import Score from "../ladder/models/Score";
 import LZString from "lz-string";
 import CareerLadders from "../ladder/CareerLadders";
@@ -141,10 +140,10 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 								onChange={(e) => this.setState({ name: e.target.value })}
 								placeholder={"Name"}
 							/>
-							<TitleSelector
-								score={this.state.score}
-								currentTitle={this.state.title}
-								setTitleFn={(title) => this.setTitle(title)}
+							<Selector
+								value={this.state.title}
+								options={this.state.score.getEligibleTitles()}
+								onChange={(title) => this.setTitle(title)}
 							/>
 						</form>
 						<PointSummaries score={this.state.score} />
