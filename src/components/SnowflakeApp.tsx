@@ -9,8 +9,10 @@ import LevelThermometer from "../components/LevelThermometer";
 import PointSummaries from "../components/PointSummaries";
 import TitleSelector from "../components/TitleSelector";
 import Score from "../ladder/models/Score";
-import { careerLadder } from "../ladder/Constants";
 import LZString from "lz-string";
+import CareerLadders from "../ladder/CareerLadders";
+import Ladder from "../ladder/models/Ladder";
+import TrackModel from "../ladder/models/Track";
 
 const styles = {
 	main: {
@@ -39,29 +41,36 @@ const styles = {
 };
 
 type ISnowflakeAppState = {
+	ladder: Ladder;
 	score: Score;
 	name: string;
 	title: string;
+	ladderId?: string;
 	focusedTrackId: string;
+	tracks: TrackModel[];
 };
 
-const allTracks = careerLadder.getAllTracks();
-
 const emptyState = (): ISnowflakeAppState => {
+	const ladder = CareerLadders.getDefault();
 	return {
 		name: "",
 		title: "",
-		score: new Score(careerLadder),
-		focusedTrackId: careerLadder.categories[0].tracks[0].id,
+		ladder: ladder,
+		score: new Score(ladder),
+		focusedTrackId: ladder.categories[0].tracks[0].id,
+		tracks: ladder.getAllTracks(),
 	};
 };
 
 const defaultState = (): ISnowflakeAppState => {
+	const ladder = CareerLadders.getDefault();
 	return {
 		name: "Cersei Lannister",
 		title: "Staff Engineer",
-		score: new Score(careerLadder), // TODO: set other defaults
-		focusedTrackId: careerLadder.categories[0].tracks[0].id,
+		ladder: ladder,
+		score: new Score(ladder), // TODO: set other defaults
+		focusedTrackId: ladder.categories[0].tracks[0].id,
+		tracks: ladder.getAllTracks(),
 	};
 };
 
@@ -139,11 +148,11 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 							/>
 						</form>
 						<PointSummaries score={this.state.score} />
-						<LevelThermometer ladder={careerLadder} score={this.state.score} />
+						<LevelThermometer ladder={this.state.ladder} score={this.state.score} />
 					</div>
 					<div style={{ flex: 0 }}>
 						<NightingaleChart
-							ladder={careerLadder}
+							ladder={this.state.ladder}
 							score={this.state.score}
 							focusedTrackId={this.state.focusedTrackId}
 							handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)}
@@ -151,7 +160,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 					</div>
 				</div>
 				<TrackSelector
-					ladder={careerLadder}
+					ladder={this.state.ladder}
 					score={this.state.score}
 					focusedTrackId={this.state.focusedTrackId}
 					setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)}
@@ -163,7 +172,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 					decreaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, -1)}
 				/>
 				<Track
-					ladder={careerLadder}
+					ladder={this.state.ladder}
 					score={this.state.score}
 					trackId={this.state.focusedTrackId}
 					handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)}
@@ -204,15 +213,15 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 	}
 
 	public shiftFocusedTrack(delta: number): void {
-		let index = allTracks.findIndex((track) => track.id === this.state.focusedTrackId);
-		index = (index + delta + allTracks.length) % allTracks.length;
-		const focusedTrackId = allTracks[index].id;
+		let index = this.state.tracks.findIndex((track) => track.id === this.state.focusedTrackId);
+		index = (index + delta + this.state.tracks.length) % this.state.tracks.length;
+		const focusedTrackId = this.state.tracks[index].id;
 		this.setState({ focusedTrackId });
 	}
 
 	public setFocusedTrackId(trackId: string): void {
-		let index = allTracks.findIndex((track) => track.id === trackId);
-		const focusedTrackId = allTracks[index].id;
+		let index = this.state.tracks.findIndex((track) => track.id === trackId);
+		const focusedTrackId = this.state.tracks[index].id;
 		this.setState({ focusedTrackId });
 	}
 
