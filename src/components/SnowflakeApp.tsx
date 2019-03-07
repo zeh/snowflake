@@ -12,6 +12,7 @@ import LZString from "lz-string";
 import CareerLadders from "../ladder/CareerLadders";
 import Ladder from "../ladder/models/Ladder";
 import TrackModel from "../ladder/models/Track";
+import Selector from "./Selector";
 
 const styles = {
 	main: {
@@ -36,6 +37,15 @@ const styles = {
 	a: {
 		color: "#888",
 		textDecoration: "none",
+	},
+	row: {
+		marginTop: 20,
+		display: "flex" as "flex",
+		alignItems: "center",
+	},
+	rowP: {
+		marginTop: 0,
+		marginRight: 5,
 	},
 };
 
@@ -80,9 +90,17 @@ const hashToState = (hash: string): ISnowflakeAppState | null => {
 	if (hashStateRaw && typeof hashStateRaw === "string") {
 		const hashState = JSON.parse(hashStateRaw);
 		if (hashState) {
-			const { name, title, ...milestoneIds } = hashState;
-			result.name = name;
-			result.title = title;
+			const { ladderId, name, title, ...milestoneIds } = hashState;
+			if (ladderId) {
+				const ladder = CareerLadders.get(CareerLadders.Ladders[ladderId]);
+				if (ladder) {
+					result.ladderId = ladderId;
+					result.ladder = ladder;
+					result.score = new Score(ladder);
+				}
+			}
+			if (name) result.name = name;
+			if (title) result.title = title;
 			result.score.setState(milestoneIds);
 		}
 	}
@@ -93,8 +111,9 @@ const stateToHash = (state: ISnowflakeAppState): string | null => {
 	if (!state || !state.score) return null;
 	const savedState = {
 		...state.score.getState(),
-		name: state.name,
-		title: state.title,
+		...(state.name ? { name: state.name } : undefined),
+		...(state.title ? { title: state.title } : undefined),
+		...(state.ladderId ? { ladderId: state.ladderId } : undefined),
 	};
 	const savedStateRaw = JSON.stringify(savedState);
 	return LZString.compressToEncodedURIComponent(savedStateRaw);
@@ -133,6 +152,14 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 				<div style={{ display: "flex" }}>
 					<div style={{ flex: 1 }}>
 						<form>
+							<div css={styles.row}>
+								<p css={styles.rowP}>Career Ladder template:</p>
+								<Selector
+									value={this.state.ladderId}
+									options={Object.keys(CareerLadders.Ladders)}
+									onChange={(id) => this.setLadderId(id)}
+								/>
+							</div>
 							<input
 								type={"text"}
 								css={styles.nameInput}
@@ -236,6 +263,18 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 		let titles = this.state.score.getEligibleTitles();
 		title = titles.indexOf(title) == -1 ? titles[0] : title;
 		this.setState({ title });
+	}
+
+	public setLadderId(ladderId: string): void {
+		if (CareerLadders.Ladders.hasOwnProperty(ladderId)) {
+			let ladder = CareerLadders.get(CareerLadders.Ladders[ladderId]);
+			if (ladder) {
+				this.setState({
+					ladder,
+					ladderId,
+				});
+			}
+		}
 	}
 }
 
