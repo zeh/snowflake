@@ -146,7 +146,7 @@
 					]
 				},
 				"org-design": {
-					"name": "Org Desigb",
+					"name": "Org Design",
 					"description": "",
 					"milestones": [
 						{ "summary": "1", "signals": [], "examples": [] },
