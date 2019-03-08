@@ -33,6 +33,7 @@
 		"nurture": {
 			"name": "Nurture",
 			"color": "#ff2222",
+			"textColor": "#000000",
 			"tracks": {
 				"mentorship": {
 					"name": "Mentorship",
@@ -83,6 +84,7 @@
 		"grow": {
 			"name": "Grow",
 			"color": "#ff2222",
+			"textColor": "#000000",
 			"tracks": {
 				"recruitment": {
 					"name": "Recruitment",
@@ -133,6 +135,7 @@
 		"execute": {
 			"name": "execute",
 			"color": "#333333",
+			"textColor": "#ffffff",
 			"tracks": {
 				"craft": {
 					"name": "Craft",
@@ -183,6 +186,7 @@
 		"build": {
 			"name": "Build",
 			"color": "#333333",
+			"textColor": "#ffffff",
 			"tracks": {
 				"web-ui": {
 					"name": "Web UI",

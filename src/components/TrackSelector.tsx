@@ -64,6 +64,7 @@ class TrackSelector extends React.Component<IProps> {
 											? "#000"
 											: this.props.ladder.getCategoryColorForTrack(track.id)),
 									background: this.props.ladder.getCategoryColorForTrack(track.id),
+									color: this.props.ladder.getCategoryTextColorForTrack(track.id),
 								}}
 								onClick={() => this.props.setFocusedTrackIdFn(track.id)}
 							>

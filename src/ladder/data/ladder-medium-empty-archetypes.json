@@ -43,6 +43,7 @@
 		"A": {
 			"name": "",
 			"color": "#00abc2",
+			"textColor": "#000000",
 			"tracks": {
 				"mobile": {
 					"name": "Mobile",
@@ -93,6 +94,7 @@
 		"B": {
 			"name": "",
 			"color": "#428af6",
+			"textColor": "#000000",
 			"tracks": {
 				"project-management": {
 					"name": "Project Management",
@@ -143,6 +145,7 @@
 		"C": {
 			"name": "",
 			"color": "#e1439f",
+			"textColor": "#000000",
 			"tracks": {
 				"career-development": {
 					"name": "Career Development",
@@ -193,6 +196,7 @@
 		"D": {
 			"name": "",
 			"color": "#e54552",
+			"textColor": "#000000",
 			"tracks": {
 				"mentorship": {
 					"name": "Mentorship",

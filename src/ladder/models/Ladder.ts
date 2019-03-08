@@ -24,7 +24,7 @@ export default class Ladder {
 				for (const categoryKey in categories) {
 					// Create individual category
 					const categoryData = categories[categoryKey];
-					const category = new Category(categoryKey, categoryData.name, categoryData.color);
+					const category = new Category(categoryKey, categoryData.name, categoryData.color, categoryData.textColor);
 					ladder.categories.push(category);
 
 					// Parse tracks
@@ -158,6 +158,11 @@ export default class Ladder {
 	public getCategoryColorForTrack(trackId: string): string {
 		const category = this.getCategoryForTrack(trackId);
 		return category ? category.color : "#ff00ff";
+	}
+
+	public getCategoryTextColorForTrack(trackId: string): string {
+		const category = this.getCategoryForTrack(trackId);
+		return category ? category.textColor : "#000000";
 	}
 
 	public getCategoryColorForCategory(categoryId: string): string {
