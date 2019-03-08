@@ -10,17 +10,35 @@ const styles = {
 		paddingBottom: 20,
 		marginBottom: 20,
 		marginTop: 20,
-		marginRight: -3,
 		borderBottom: "2px solid #ccc",
 	},
 	category: {
-		display: "flex",
+		display: "flex" as "flex",
 		flex: "1",
+		flexWrap: "wrap" as "wrap",
+		marginLeft: 3,
+		":first-of-type": {
+			marginLeft: 0,
+		},
+	},
+	categoryName: {
+		fontSize: 9,
+		fontWeight: "bold" as "bold",
+		flex: "1 0 100%",
+		textAlign: "center" as "center",
+		marginTop: 2,
+		backgroundColor: "#eee",
+		lineHeight: "2em",
+		opacity: 0.7,
+		borderRadius: "0 0 4px 4px",
 	},
 	track: {
 		flex: "1",
-		marginRight: 3,
+		marginLeft: 3,
 		alignSelf: "flex-end",
+		":first-of-type": {
+			marginLeft: 0,
+		},
 	},
 	trackName: {
 		textAlign: "center" as "center",
@@ -49,6 +67,8 @@ class TrackSelector extends React.Component<IProps> {
 	public render(): JSX.Element {
 		const { focusedTrackId, ladder, score } = this.props;
 
+		const hasCategoryNames = ladder.hasCategoryNames();
+
 		return (
 			<div css={styles.container}>
 				{ladder.categories.map((category) => (
@@ -61,14 +81,25 @@ class TrackSelector extends React.Component<IProps> {
 									style={{
 										border:
 											"4px solid " + (track.id == focusedTrackId ? "#000" : ladder.getCategoryColorForTrack(track.id)),
-										background: ladder.getCategoryColorForTrack(track.id),
-										color: ladder.getCategoryTextColorForTrack(track.id),
+										background: category.color,
+										color: category.textColor,
 									}}
 								>
 									{score.getTrackMilestone(track.id)}
 								</div>
 							</div>
 						))}
+						{hasCategoryNames && (
+							<div
+								css={styles.categoryName}
+								style={{
+									background: category.color,
+									color: category.textColor,
+								}}
+							>
+								{category.name}
+							</div>
+						)}
 					</div>
 				))}
 			</div>
