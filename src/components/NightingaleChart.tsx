@@ -80,7 +80,7 @@ class NightingaleChart extends React.Component<IProps> {
 							const isCurrentTrack = track.id == this.props.focusedTrackId;
 							const color = this.props.ladder.getCategoryColorForTrack(track.id);
 							return (
-								<g key={track.id} transform={`rotate(${(i * 360) / allTracks.length})`}>
+								<g key={track.id} transform={`rotate(${(i * 360) / allTracks.length + 45})`}>
 									{arcMilestones.map((milestoneId) => {
 										const isCurrentMilestone = isCurrentTrack && milestoneId == currentMilestoneId;
 										const isMet = this.props.score.getTrackMilestone(track.id) >= milestoneId || milestoneId == 0;
