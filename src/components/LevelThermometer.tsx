@@ -110,7 +110,9 @@ class LevelThermometer extends React.Component<IProps> {
 		);
 	}
 
-	public render(): JSX.Element {
+	public render(): JSX.Element | null {
+		if (!this.props.ladder.hasLevels()) return null;
+
 		let categoryPoints = this.props.score.getScoreByCategory();
 		let lastCategoryIndex = 0;
 		Object.keys(categoryPoints).forEach((categoryKey, i) => {

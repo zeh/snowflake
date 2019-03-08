@@ -60,7 +60,8 @@ export default class Score {
 			.map((ptt) => ptt.name);
 	}
 
-	public getLevel(): PointsLevelMap {
+	public getLevel(): PointsLevelMap | undefined {
+		if (!this.ladder.hasLevels()) return undefined;
 		const points = this.getScore();
 		const allLevels = this.ladder.pointsToLevels;
 		let currentLevel = allLevels[0];
@@ -71,6 +72,7 @@ export default class Score {
 	}
 
 	public getNextLevel(): PointsLevelMap | undefined {
+		if (!this.ladder.hasLevels()) return undefined;
 		const points = this.getScore();
 		const allLevels = this.ladder.pointsToLevels;
 		return allLevels.find((ptl) => ptl.points > points);

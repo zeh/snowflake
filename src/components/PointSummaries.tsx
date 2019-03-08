@@ -31,15 +31,16 @@ interface IProps {
 
 class PointSummaries extends React.Component<IProps> {
 	public render(): JSX.Element {
-		const totalPoints = this.props.score.getScore();
-		const currentLevel = this.props.score.getLevel();
-		const nextLevel = this.props.score.getNextLevel();
-		const pointsToNextLevel = nextLevel ? `${nextLevel.points - totalPoints}` : "N/A";
+		const { score } = this.props;
+		const totalPoints = score.getScore();
+		const currentLevel = score.getLevel();
+		const nextLevel = score.getNextLevel();
+		const pointsToNextLevel = nextLevel ? `${nextLevel.points - totalPoints}` : undefined;
 
 		const blocks = [
 			{
 				label: "Current level",
-				value: currentLevel.level,
+				value: currentLevel ? currentLevel.level : "N/A",
 			},
 			{
 				label: "Total points",
@@ -47,7 +48,7 @@ class PointSummaries extends React.Component<IProps> {
 			},
 			{
 				label: "Points to next level",
-				value: pointsToNextLevel,
+				value: pointsToNextLevel ? pointsToNextLevel : "N/A",
 			},
 		];
 

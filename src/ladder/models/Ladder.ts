@@ -177,4 +177,8 @@ export default class Ladder {
 	public hasCategoryNames(): boolean {
 		return this.categories.some((category) => !!category.name);
 	}
+
+	public hasLevels(): boolean {
+		return this.pointsToLevels.length > 0;
+	}
 }
