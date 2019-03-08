@@ -40,8 +40,8 @@
 		]
 	},
 	"categories": {
-		"a": {
-			"name": "A",
+		"A": {
+			"name": "",
 			"color": "#00abc2",
 			"tracks": {
 				"mobile": {
@@ -90,8 +90,8 @@
 				}
 			}
 		},
-		"b": {
-			"name": "B",
+		"B": {
+			"name": "",
 			"color": "#428af6",
 			"tracks": {
 				"project-management": {
@@ -140,8 +140,8 @@
 				}
 			}
 		},
-		"c": {
-			"name": "C",
+		"C": {
+			"name": "",
 			"color": "#e1439f",
 			"tracks": {
 				"career-development": {
@@ -190,8 +190,8 @@
 				}
 			}
 		},
-		"d": {
-			"name": "D",
+		"D": {
+			"name": "",
 			"color": "#e54552",
 			"tracks": {
 				"mentorship": {
