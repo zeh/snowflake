@@ -4,6 +4,8 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-03-07
+
 ### Added
 
 - Added a changelog file
@@ -17,6 +19,10 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 - State hashes are saved as a compressed JSON payload, rather than a raw array of fixed fields; this makes state easier to change
 - Moved all styles to [Emotion](https://emotion.sh/docs/object-styles)
 - Rotated chart 45" so categories align with top
+
+### Fixed
+
+- Various bug fixes on score calculation, oops
 
 ## [1.0.0] - 2019-03-06
 

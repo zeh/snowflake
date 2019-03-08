@@ -2,6 +2,8 @@
 
 This is a version of [Medium's snowflake tool](https://github.com/Medium/snowflake) (created as part of their [growth framework documentation](https://medium.com/s/engineering-growth-framework)), but using TypeScript instead of Flow, and adapted to Work&Co's (research) needs.
 
+You can see a live version of the current stable built on [https://zeh-snowflake.netlify.com/](https://zeh-snowflake.netlify.com/).
+
 Check the list of recent changes on the [changelog](CHANGELOG.md).
 
 ## Contributions
