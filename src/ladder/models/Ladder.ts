@@ -168,4 +168,8 @@ export default class Ladder {
 	public hasArchetypes(): boolean {
 		return this.pointWeightsToArchetypes.length > 0;
 	}
+
+	public hasCategoryNames(): boolean {
+		return this.categories.some((category) => !!category.name);
+	}
 }
