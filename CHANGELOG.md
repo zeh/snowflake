@@ -4,9 +4,13 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-03-08
+
 ### Added
 
 - Categories can have a different text color for labels
+- The concept of "levels" is also optional per template
+- Added a template using Chris Alden's proposal
 
 ### Fixed
 

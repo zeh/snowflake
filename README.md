@@ -67,4 +67,3 @@ Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) t
 ### Data
 
 * Create my own ladder, duh
-* Add Work&Co's titles to a ladder (Alden's?)
