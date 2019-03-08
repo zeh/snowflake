@@ -38,7 +38,9 @@ export default class Score {
 	public getScore(): number {
 		let total = 0;
 		for (const trackId in this.scores) {
-			total += this.getScoreForTrack(trackId);
+			if (this.doesTrackIdExist(trackId)) {
+				total += this.getScoreForTrack(trackId);
+			}
 		}
 		return total;
 	}
@@ -122,5 +124,9 @@ export default class Score {
 		Object.keys(newState).forEach((trackId) => {
 			this.scores[trackId] = newState[trackId];
 		});
+	}
+
+	private doesTrackIdExist(trackId: string): boolean {
+		return this.ladder.getAllTracks().some((track) => track.id === trackId);
 	}
 }

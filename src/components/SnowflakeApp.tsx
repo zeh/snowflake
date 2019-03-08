@@ -84,6 +84,25 @@ const defaultState = (): ISnowflakeAppState => {
 	};
 };
 
+const getStateForLadder = (
+	ladderId: string,
+	currentScore?: Score,
+): { ladder: Ladder; ladderId: string; score: Score; tracks: TrackModel[] } | undefined => {
+	if (CareerLadders.Ladders.hasOwnProperty(ladderId)) {
+		let ladder = CareerLadders.get(CareerLadders.Ladders[ladderId]);
+		if (ladder) {
+			const score = new Score(ladder);
+			if (currentScore) score.setState(currentScore.getState());
+			return {
+				ladder,
+				ladderId,
+				score: score,
+				tracks: ladder.getAllTracks(),
+			};
+		}
+	}
+};
+
 const hashToState = (hash: string): ISnowflakeAppState | null => {
 	if (!hash) return null;
 	const result = defaultState();
@@ -93,11 +112,12 @@ const hashToState = (hash: string): ISnowflakeAppState | null => {
 		if (hashState) {
 			const { ladderId, name, title, ...milestoneIds } = hashState;
 			if (ladderId) {
-				const ladder = CareerLadders.get(CareerLadders.Ladders[ladderId]);
-				if (ladder) {
+				const ladderState = getStateForLadder(ladderId);
+				if (ladderState) {
 					result.ladderId = ladderId;
-					result.ladder = ladder;
-					result.score = new Score(ladder);
+					result.ladder = ladderState.ladder;
+					result.score = ladderState.score;
+					result.tracks = ladderState.tracks;
 				}
 			}
 			if (name) result.name = name;
@@ -248,9 +268,10 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 	}
 
 	public setFocusedTrackId(trackId: string): void {
-		let index = this.state.tracks.findIndex((track) => track.id === trackId);
-		const focusedTrackId = this.state.tracks[index].id;
-		this.setState({ focusedTrackId });
+		// let index = this.state.tracks.findIndex((track) => track.id === trackId);
+		// const focusedTrackId = this.state.tracks[index].id;
+		// this.setState({ focusedTrackId });
+		this.setState({ focusedTrackId: trackId });
 	}
 
 	public shiftFocusedTrackMilestoneByDelta(delta: number): void {
@@ -268,14 +289,9 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 	}
 
 	public setLadderId(ladderId: string): void {
-		if (CareerLadders.Ladders.hasOwnProperty(ladderId)) {
-			let ladder = CareerLadders.get(CareerLadders.Ladders[ladderId]);
-			if (ladder) {
-				this.setState({
-					ladder,
-					ladderId,
-				});
-			}
+		const ladderState = getStateForLadder(ladderId, this.state.score);
+		if (ladderState) {
+			this.setState(ladderState);
 		}
 	}
 }
