@@ -63,6 +63,7 @@ Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) t
 * Allow job title selection with sorting based on stronger categories
 * Allow loading external JSON files
 * Add labels for category in chart/track list
+* Sort the archetype results by score, duh
 
 ### Data
 
