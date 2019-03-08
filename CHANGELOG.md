@@ -4,6 +4,10 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
+### Fixed
+
+- Switching between different templates work again: tracks are clickable, milestone selections carry, keyboard navigation works, thermometer colors update
+
 ## [1.1.0] - 2019-03-07
 
 ### Added

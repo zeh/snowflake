@@ -61,16 +61,11 @@ Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) t
 ## Future work
 
 * Allow job title selection with sorting based on stronger categories
-* Tweak and create a Work&Co-specific ladder
 * Allow loading external JSON files
 * Add labels for category in chart/track list
+* Add foreground color options for categories
 
 ### Data
 
 * Create my own ladder, duh
 * Add Work&Co's titles to a ladder (Alden's?)
-
-### Bugs
-
-* Upon changing ladder JSONs, the thermometer doesn't refresh colors
-* Not all boxes are clickable on the bottom track list in some ladders (Alden's); keyboard navigation is also all broken (probably undefineds on data)
