@@ -10,6 +10,7 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ### Fixed
 
+- Yet more bugs on score calculation
 - Switching between different templates work again: tracks are clickable, milestone selections carry, keyboard navigation works, thermometer colors update
 
 ## [1.1.0] - 2019-03-07
@@ -48,4 +49,4 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ### Started
 
-* Forked from [Medium's original project](https://github.com/Medium/snowflake)
+- Forked from [Medium's original project](https://github.com/Medium/snowflake)
