@@ -4,6 +4,10 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
+### Added
+
+- Categories can have a different text color for labels
+
 ### Fixed
 
 - Switching between different templates work again: tracks are clickable, milestone selections carry, keyboard navigation works, thermometer colors update
