@@ -27,7 +27,8 @@
 			{ "name": "Senior Group Lead", "min": 58, "max": 89 },
 			{ "name": "Principal Engineer", "min": 90 },
 			{ "name": "Director of Engineering", "min": 90 }
-		]
+		],
+		"pointWeightsToArchetypes": []
 	},
 	"categories": {
 		"A": {

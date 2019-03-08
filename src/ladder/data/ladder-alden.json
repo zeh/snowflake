@@ -28,7 +28,8 @@
 			{ "name": "Technology Director", "min": 128, "max": 159 },
 			{ "name": "Group Technology Director", "min": 160, "max": 191 },
 			{ "name": "Associate Partner", "min": 192 }
-		]
+		],
+		"pointWeightsToArchetypes": []
 	},
 	"categories": {
 		"nurture": {
