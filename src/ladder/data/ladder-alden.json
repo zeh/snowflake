@@ -1,23 +1,7 @@
 {
 	"mappings": {
 		"milestonesToPoints": [ 1, 3, 6, 12, 20 ],
-		"pointsToLevels": {
-			"0": "1.1",
-			"5": "1.2",
-			"11": "1.3",
-			"17": "2.1",
-			"23": "2.2",
-			"29": "2.3",
-			"36": "3.1",
-			"43": "3.2",
-			"50": "3.3",
-			"58": "4.1",
-			"66": "4.2",
-			"74": "4.3",
-			"90": "5.1",
-			"110": "5.2",
-			"135": "5.3"
-		},
+		"pointsToLevels": {},
 		"pointsToTitles": [
 			{ "name": "Developer Intern", "min": 0, "max": 7 },
 			{ "name": "Associate Developer", "min": 8, "max": 15 },
@@ -25,9 +9,9 @@
 			{ "name": "Senior Developer", "min": 32, "max": 63 },
 			{ "name": "Lead Developer", "min": 64, "max": 95 },
 			{ "name": "Associate Technology Director", "min": 96, "max": 127 },
-			{ "name": "Technology Director", "min": 128, "max": 159 },
-			{ "name": "Group Technology Director", "min": 160, "max": 191 },
-			{ "name": "Associate Partner", "min": 192 }
+			{ "name": "Technology Director", "min": 128, "max": 191 },
+			{ "name": "Group Technology Director", "min": 192, "max": 255 },
+			{ "name": "Associate Partner", "min": 256 }
 		],
 		"pointWeightsToArchetypes": []
 	},
