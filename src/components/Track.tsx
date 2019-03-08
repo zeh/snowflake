@@ -58,7 +58,7 @@ class Track extends React.Component<IProps> {
 				<div style={{ display: "flex" }}>
 					<table css={styles.table}>
 						<tbody style={{ display: "flex", flexDirection: "column-reverse" }}>
-							{track.milestones.map((milestone, index) => {
+							{[undefined, ...track.milestones].map((milestone, index) => {
 								const isMet = index <= currentMilestoneId;
 								const color = this.props.ladder.getCategoryColorForTrack(track.id);
 								return (
