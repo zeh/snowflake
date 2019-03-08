@@ -132,7 +132,7 @@ export default class Ladder {
 
 	public getMilestonePoints(milestoneIndex: number): number {
 		if (milestoneIndex === 0) return 0;
-		if (milestoneIndex < this.milestonesToPoints.length - 1) return this.milestonesToPoints[milestoneIndex - 1];
+		if (milestoneIndex >= this.milestonesToPoints.length - 1) return this.milestonesToPoints[milestoneIndex - 1];
 		return this.milestonesToPoints[this.milestonesToPoints.length - 1];
 	}
 
