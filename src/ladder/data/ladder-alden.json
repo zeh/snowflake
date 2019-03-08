@@ -19,14 +19,15 @@
 			"135": "5.3"
 		},
 		"pointsToTitles": [
-			{ "name": "Engineer I", "min": 0, "max": 16 },
-			{ "name": "Engineer II", "min": 17, "max": 35 },
-			{ "name": "Senior Engineer", "min": 36, "max": 57 },
-			{ "name": "Group Lead", "min": 36, "max": 57 },
-			{ "name": "Staff Engineer", "min": 58, "max": 89 },
-			{ "name": "Senior Group Lead", "min": 58, "max": 89 },
-			{ "name": "Principal Engineer", "min": 90 },
-			{ "name": "Director of Engineering", "min": 90 }
+			{ "name": "Developer Intern", "min": 0, "max": 7 },
+			{ "name": "Associate Developer", "min": 8, "max": 15 },
+			{ "name": "Developer", "min": 16, "max": 31 },
+			{ "name": "Senior Developer", "min": 32, "max": 63 },
+			{ "name": "Lead Developer", "min": 64, "max": 95 },
+			{ "name": "Associate Technology Director", "min": 96, "max": 127 },
+			{ "name": "Technology Director", "min": 128, "max": 159 },
+			{ "name": "Group Technology Director", "min": 160, "max": 191 },
+			{ "name": "Associate Partner", "min": 192 }
 		]
 	},
 	"categories": {
@@ -133,7 +134,7 @@
 			}
 		},
 		"execute": {
-			"name": "execute",
+			"name": "Execute",
 			"color": "#333333",
 			"textColor": "#ffffff",
 			"tracks": {
