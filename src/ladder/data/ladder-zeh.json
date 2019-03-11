@@ -1,0 +1,277 @@
+{
+	"mappings": {
+		"milestonesToPoints": [ 1, 3, 6, 12, 20 ],
+		"pointsToLevels": {},
+		"pointsToTitles": [
+			{ "name": "Developer Intern", "min": 0, "max": 7 },
+			{ "name": "Associate Developer", "min": 8, "max": 15 },
+			{ "name": "Developer", "min": 16, "max": 31 },
+			{ "name": "Senior Developer", "min": 32, "max": 63 },
+			{ "name": "Lead Developer", "min": 64, "max": 95 },
+			{ "name": "Associate Technology Director", "min": 96, "max": 127 },
+			{ "name": "Associate Principal Developer", "min": 96, "max": 127 },
+			{ "name": "Technology Director", "min": 128, "max": 191 },
+			{ "name": "Principal Developer", "min": 128, "max": 191 },
+			{ "name": "Group Technology Director", "min": 192, "max": 255 },
+			{ "name": "Associate Partner", "min": 256 }
+		],
+		"pointWeightsToArchetypes": []
+	},
+	"categories": {
+		"knowledge-domains": {
+			"name": "Knowledge Domains",
+			"color": "#00abc2",
+			"textColor": "#000000",
+			"tracks": {
+				"mobile": {
+					"name": "Mobile",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"web": {
+					"name": "Web",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"servers": {
+					"name": "Servers",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"data-modelling": {
+					"name": "Data modelling",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"motion": {
+					"name": "Motion",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"dev-ops": {
+					"name": "Dev Ops",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"execution": {
+			"name": "Execution",
+			"color": "#00c2ab",
+			"textColor": "#000000",
+			"tracks": {
+				"architecture": {
+					"name": "Architecture",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"writing-code": {
+					"name": "Writing Code",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"testing": {
+					"name": "Testing",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"debugging": {
+					"name": "Debugging",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"growth": {
+			"name": "Growth",
+			"color": "#428af6",
+			"textColor": "#000000",
+			"tracks": {
+				"research": {
+					"name": "Research",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"mentorship": {
+					"name": "Mentorship",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"knowledge-sharing": {
+					"name": "Knowledge Sharing",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"open-source": {
+					"name": "Open Source",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"coordination": {
+			"name": "Coordination",
+			"color": "#e1439f",
+			"textColor": "#000000",
+			"tracks": {
+				"project-management": {
+					"name": "Project Management",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"communication": {
+					"name": "Communication",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"internal-strategy": {
+					"name": "Internal Strategy",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"technical-leadership": {
+					"name": "Thecnical Leadership",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"talent": {
+			"name": "Talent",
+			"color": "#e54552",
+			"textColor": "#000000",
+			"tracks": {
+				"recruiting": {
+					"name": "Recruiting",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"evangelism": {
+					"name": "Evangelism",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		}
+	}
+}
