@@ -53,11 +53,13 @@ class ArchetypeSummary extends React.Component<IProps> {
 					<tr>
 						<td css={styles.summaryLabel}>Archetypes</td>
 					</tr>
-					{types.map((type, i) => (
-						<tr key={i} css={i === 0 ? styles.typePrimary : styles.typeSecondary}>
-							<td>{`${type.name} (${Math.round(type.scale * 100)}%)`}</td>
-						</tr>
-					))}
+					{types
+						.sort((a, b) => b.scale - a.scale)
+						.map((type, i) => (
+							<tr key={i} css={i === 0 ? styles.typePrimary : styles.typeSecondary}>
+								<td>{`${type.name} (${Math.round(type.scale * 100)}%)`}</td>
+							</tr>
+						))}
 				</tbody>
 			</table>
 		);
