@@ -56,7 +56,9 @@ This will create static files that are ready to be deployed to a standard web se
 
 ## Editing
 
-Edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) to see changes reflected in how the application behaves.
+You can edit [src/ladder/data/ladder-medium.json](/src/ladder/data/ladder-medium.json) directly to see changes reflected in how the application behaves.
+
+Alternatively, create a duplicate of that file, add a reference to it to [src/ladder/CareerLadders.ts](src/ladder/CareerLadders.ts) so it can be selected from the drop-down list of templates.
 
 ## Future work
 
