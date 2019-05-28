@@ -1,8 +1,8 @@
 {
-  "name": "eng-growth",
+  "name": "snowflake",
   "version": "1.3.0",
   "main": "index.js",
-  "repository": "https://github.com/Medium/eng-growth",
+  "repository": "https://github.com/zeh/snowflake",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.7",
