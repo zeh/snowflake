@@ -230,23 +230,15 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 				/>
 				<div style={{ display: "flex", paddingBottom: "20px" }}>
 					<div style={{ flex: 1 }}>
-						Made with ❤️ by{" "}
-						<a css={styles.a} href={"https://medium.engineering"} target={"_blank"}>
-							Medium Eng
-						</a>
-						. Learn about the{" "}
+						{"Based on "}
 						<a css={styles.a} href={"https://medium.com/s/engineering-growth-framework"} target={"_blank"}>
-							growth framework
+							{"Medium's growth framework and tools"}
 						</a>
-						. Get the{" "}
-						<a css={styles.a} href={"https://github.com/Medium/snowflake"} target={"_blank"}>
-							source code
+						{". Get the "}
+						<a css={styles.a} href={"https://github.com/zeh/snowflake"} target={"_blank"}>
+							{"source code"}
 						</a>
-						. Read the{" "}
-						<a css={styles.a} href={"https://medium.com/p/85e078bc15b7"} target={"_blank"}>
-							terms of service
-						</a>
-						.
+						{"."}
 					</div>
 				</div>
 			</main>
