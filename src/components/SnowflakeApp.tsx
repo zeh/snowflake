@@ -50,24 +50,24 @@ const styles = {
 	},
 };
 
-type ISnowflakeAppState = {
-	ladder: Ladder;
-	score: Score;
-	name: string;
-	title: string;
-	ladderId?: string;
+interface ISnowflakeAppState {
 	focusedTrackId: string;
+	ladder: Ladder;
+	ladderId?: string;
+	name: string;
+	score: Score;
+	title: string;
 	tracks: TrackModel[];
-};
+}
 
 const emptyState = (): ISnowflakeAppState => {
 	const ladder = CareerLadders.getDefault();
 	return {
-		name: "",
-		title: "",
-		ladder: ladder,
-		score: new Score(ladder),
 		focusedTrackId: ladder.categories[0].tracks[0].id,
+		ladder: ladder,
+		name: "",
+		score: new Score(ladder),
+		title: "",
 		tracks: ladder.getAllTracks(),
 	};
 };
@@ -75,11 +75,12 @@ const emptyState = (): ISnowflakeAppState => {
 const defaultState = (): ISnowflakeAppState => {
 	const ladder = CareerLadders.getDefault();
 	return {
-		name: "Cersei Lannister",
-		title: "Staff Engineer",
-		ladder: ladder,
-		score: new Score(ladder), // TODO: set other defaults
 		focusedTrackId: ladder.categories[0].tracks[0].id,
+		ladder: ladder,
+		ladderId: CareerLadders.getDefaultId(),
+		name: "Cersei Lannister",
+		score: new Score(ladder), // TODO: set other defaults
+		title: "Staff Engineer",
 		tracks: ladder.getAllTracks(),
 	};
 };

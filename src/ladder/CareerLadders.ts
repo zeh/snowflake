@@ -7,7 +7,7 @@ import workCo from "./data/ladder-workco-draft.json";
 
 import Ladder from "./models/Ladder";
 
-const Ladders: any = {
+const Ladders: Record<string, unknown> = {
 	medium,
 	mediumEmpty,
 	mediumEmptyWithArchetypes,
@@ -21,12 +21,22 @@ function get(data: unknown): Ladder | null {
 	return null;
 }
 
+function getDefaultJSON(): unknown {
+	return workCo;
+}
+
 function getDefault(): Ladder {
-	return get(medium) as Ladder;
+	return get(getDefaultJSON()) as Ladder;
+}
+
+function getDefaultId(): string | undefined {
+	const defaultJSON = getDefaultJSON();
+	return Object.keys(Ladders).find((id) => Ladders[id] === defaultJSON);
 }
 
 export default {
 	Ladders,
 	get,
 	getDefault,
+	getDefaultId,
 };
