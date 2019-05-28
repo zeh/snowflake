@@ -163,6 +163,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 	}
 
 	public render(): JSX.Element {
+		const { focusedTrackId, ladder, ladderId, name, score, title } = this.state;
 		return (
 			<main css={styles.main}>
 				<div style={{ margin: "19px auto 0", width: 142 }}>
@@ -176,7 +177,7 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 							<div css={styles.row}>
 								<p css={styles.rowP}>Career Ladder template:</p>
 								<Selector
-									value={this.state.ladderId}
+									value={ladderId}
 									options={Object.keys(CareerLadders.Ladders)}
 									onChange={(id) => this.setLadderId(id)}
 								/>
@@ -184,33 +185,29 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 							<input
 								type={"text"}
 								css={styles.nameInput}
-								value={this.state.name}
+								value={name}
 								onChange={(e) => this.setState({ name: e.target.value })}
 								placeholder={"Name"}
 							/>
-							<Selector
-								value={this.state.title}
-								options={this.state.score.getEligibleTitles()}
-								onChange={(title) => this.setTitle(title)}
-							/>
+							<Selector value={title} options={score.getEligibleTitles()} onChange={(title) => this.setTitle(title)} />
 						</form>
-						<PointSummaries score={this.state.score} />
-						<ArchetypeSummary ladder={this.state.ladder} score={this.state.score} />
-						<LevelThermometer ladder={this.state.ladder} score={this.state.score} />
+						<PointSummaries score={score} />
+						<ArchetypeSummary ladder={ladder} score={score} />
+						<LevelThermometer ladder={ladder} score={score} />
 					</div>
 					<div style={{ flex: 0 }}>
 						<NightingaleChart
-							ladder={this.state.ladder}
-							score={this.state.score}
-							focusedTrackId={this.state.focusedTrackId}
+							ladder={ladder}
+							score={score}
+							focusedTrackId={focusedTrackId}
 							handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)}
 						/>
 					</div>
 				</div>
 				<TrackSelector
-					ladder={this.state.ladder}
-					score={this.state.score}
-					focusedTrackId={this.state.focusedTrackId}
+					ladder={ladder}
+					score={score}
+					focusedTrackId={focusedTrackId}
 					setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)}
 				/>
 				<KeyboardListener
@@ -220,9 +217,9 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 					decreaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, -1)}
 				/>
 				<Track
-					ladder={this.state.ladder}
-					score={this.state.score}
-					trackId={this.state.focusedTrackId}
+					ladder={ladder}
+					score={score}
+					trackId={focusedTrackId}
 					handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)}
 				/>
 				<div style={{ display: "flex", paddingBottom: "20px" }}>
