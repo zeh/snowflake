@@ -1,8 +1,9 @@
 import medium from "./data/ladder-medium.json";
 import mediumEmpty from "./data/ladder-medium-empty.json";
 import mediumEmptyWithArchetypes from "./data/ladder-medium-empty-archetypes.json";
-import alden from "./data/ladder-alden.json";
-import zeh from "./data/ladder-zeh.json";
+import aldenOld from "./data/ladder-alden.json";
+import zehOld from "./data/ladder-zeh.json";
+import workCo from "./data/ladder-workco-draft.json";
 
 import Ladder from "./models/Ladder";
 
@@ -10,8 +11,9 @@ const Ladders: any = {
 	medium,
 	mediumEmpty,
 	mediumEmptyWithArchetypes,
-	alden,
-	zeh,
+	aldenOld,
+	zehOld,
+	workCo,
 };
 
 function get(data: unknown): Ladder | null {

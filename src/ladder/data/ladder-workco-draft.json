@@ -1,0 +1,264 @@
+{
+	"mappings": {
+		"milestonesToPoints": [ 1, 3, 6, 12, 20 ],
+		"pointsToLevels": {},
+		"pointsToTitles": [],
+		"pointWeightsToArchetypes": []
+	},
+	"categories": {
+		"execute": {
+			"name": "Execute",
+			"color": "#ff2222",
+			"textColor": "#000000",
+			"tracks": {
+				"web": {
+					"name": "Web",
+					"description": "An engineer pursuing the Web track develops expertise in frontend web application technologies, such as HTML, CSS, and JavaScript.",
+					"milestones": [
+						{
+							"summary": "Contributes working web client code within established project architectures, patterns, and best practices.",
+							"signals": [
+								"Contributes a small feature to an existing screen or flow",
+								"Fixes UI bugs",
+								"Uses an existing class or utility to add new functionality to a product"
+							],
+							"examples": []
+						},
+						{
+							"summary": "Develops significant UI features and contributes new ideas and patterns to the client application architecture of the products we work on.",
+							"signals": [
+								"Builds global static UI components leveraged throughout an app",
+								"Proposes a new CSS grid approach for a tricky layout",
+								"Extends existing authentication structure to build a new UI flow"
+							],
+							"examples": []
+						},
+						{
+							"summary": "Takes ownership over defining large portions of UI architecture and demonstrates deep knowledge of the technologies we use and the platforms on which we develop.",
+							"signals": [
+								"Owns development of the data layer of an application’s booking flow",
+								"Implements a framework for applying subtle route transitions across a product",
+								"Suggests alternative implementation approaches to improve run-time performance in the browser"
+							],
+							"examples": []
+						},
+						{
+							"summary": "Builds complex and reusable architectures that pioneer best practices and empower the rest of the team to be more productive.",
+							"signals": [
+								"Designs architecture for implementing authentication from third party providers using JWTs",
+								"Shares expertise on GraphQL with teams on other projects",
+								"Implements a unit testing framework and foundation on a project that significantly reduces regressions found during QA"
+							],
+							"examples": []
+						},
+						{
+							"summary": "Helps define strategic technical vision for web client development at Work & Co based on industry-leading expertise.",
+							"signals": [
+								"Leads analysis of existing Server Side Rendering frameworks and defines strategic vision for implementing SSR at Work & Co",
+								"Defines accessibility patterns that are adopted across all projects",
+								"Directs effort to create a popular open source project out of an internal library"
+							],
+							"examples": []
+						}
+					]
+				},
+				"native": {
+					"name": "Native",
+					"description": "An engineer pursuing the Native track develops expertise in mobile platform engineering, such as iOS and Android.",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"platform": {
+					"name": "Platform",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"architecture": {
+					"name": "Architecture",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"deliver": {
+			"name": "Deliver",
+			"color": "#ff2222",
+			"textColor": "#000000",
+			"tracks": {
+				"craft": {
+					"name": "Craft",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"product": {
+					"name": "Product",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"communication": {
+					"name": "Communication",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"initiative": {
+					"name": "Initiative",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"acquire": {
+			"name": "Acquire",
+			"color": "#666666",
+			"textColor": "#ffffff",
+			"tracks": {
+				"new-business": {
+					"name": "New Business",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"acquire-attract": {
+			"name": "Acquire/Attract",
+			"color": "#666666",
+			"textColor": "#ffffff",
+			"tracks": {
+				"influence": {
+					"name": "Influence",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"attract": {
+			"name": "Attract",
+			"color": "#666666",
+			"textColor": "#ffffff",
+			"tracks": {
+				"recruitment": {
+					"name": "Recruitment",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"retain": {
+			"name": "Retain",
+			"color": "#666666",
+			"textColor": "#ffffff",
+			"tracks": {
+				"community": {
+					"name": "Community",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"team": {
+					"name": "Team",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		},
+		"grow": {
+			"name": "Grow",
+			"color": "#666666",
+			"textColor": "#ffffff",
+			"tracks": {
+				"mentorship": {
+					"name": "Mentorship",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				},
+				"education": {
+					"name": "Education",
+					"description": "",
+					"milestones": [
+						{ "summary": "1", "signals": [], "examples": [] },
+						{ "summary": "2", "signals": [], "examples": [] },
+						{ "summary": "3", "signals": [], "examples": [] },
+						{ "summary": "4", "signals": [], "examples": [] },
+						{ "summary": "5", "signals": [], "examples": [] }
+					]
+				}
+			}
+		}
+	}
+}
