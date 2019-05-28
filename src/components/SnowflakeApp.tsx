@@ -189,7 +189,13 @@ class SnowflakeApp extends React.Component<IProps, ISnowflakeAppState> {
 								onChange={(e) => this.setState({ name: e.target.value })}
 								placeholder={"Name"}
 							/>
-							<Selector value={title} options={score.getEligibleTitles()} onChange={(title) => this.setTitle(title)} />
+							{ladder.hasTitles() && (
+								<Selector
+									value={title}
+									options={score.getEligibleTitles()}
+									onChange={(title) => this.setTitle(title)}
+								/>
+							)}
 						</form>
 						<PointSummaries score={score} />
 						<ArchetypeSummary ladder={ladder} score={score} />

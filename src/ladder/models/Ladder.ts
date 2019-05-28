@@ -170,6 +170,10 @@ export default class Ladder {
 		return category ? category.color : "#ff00ff";
 	}
 
+	public hasTitles(): boolean {
+		return this.pointsToTitles.length > 0;
+	}
+
 	public hasArchetypes(): boolean {
 		return this.pointWeightsToArchetypes.length > 0;
 	}
