@@ -4,6 +4,21 @@ All changes to this project are documented in this file. We follow [Semantic Ver
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-05-28
+
+### Added
+
+- Title mappings are not required on career ladders anymore, and won't show a title picker
+- Added a template using the current proposed ladder (default)
+
+### Changed
+
+- Footer message and links was customized
+
+### Fixed
+
+- Default template is properly auto-selected in template picker
+
 ## [1.2.0] - 2019-03-08
 
 ### Added
